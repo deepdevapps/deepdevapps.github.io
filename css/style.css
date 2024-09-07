@@ -1,0 +1,313 @@
+body{
+    margin: 0;
+background-image: url('../Images/bg.png');
+
+background-repeat: no-repeat;
+
+background-position: center center;
+
+background-attachment: fixed;
+  font-family: "Inconsolata", sans-serif;
+    background-size: cover;
+letter-spacing: 0.1rem;
+        font-size: large;
+    line-height: 1.6;
+    color: #f0f8ff
+        
+
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+*,
+*:before,
+*:after{
+        box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.intro__title{
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align-last: center;
+    line-height: 1;
+}
+
+
+.intro__title1{
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.intro__title:after{
+    content: "";
+    display: block;
+    width: 1200px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 60px auto;
+}
+
+.intro__inner{
+    font-family: 'Inconsolata';
+    color: white;
+    width: 100%;
+    max-width: 1880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.header{
+    padding-top: 30px;
+    width: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000 ;
+}
+
+.header__logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.nav{
+    font-size: 14x;
+    text-transform: uppercase;
+}
+
+.nav__link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav__link:after{
+    content: '';
+    width: 100%;
+    height: 3px;
+
+    
+    opacity: 0;
+    
+    transition: opacity .1s linear;
+    
+    background-color: darkorange;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.nav__link:hover{
+
+    
+    
+    color: darkorange;
+    transition: color .2s linear;
+}
+
+.nav__link:hover:after{
+    opacity: 1;
+}
+
+
+.btn{
+     display: inline-block;
+    vertical-align: top;
+    padding: 10px 15px;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 auto;
+    transition: background .2s linear, color .1s linear;
+    
+}
+
+.btn:hover{
+    background-color: darkorange;
+    color: #ffffff;
+}
+
+.btn2{
+     display: inline-block;
+    vertical-align: top;
+    padding: 10px 15px;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 60px;
+    transition: background .2s linear, color .1s linear;
+}
+
+.btn2:hover{
+    background-color: #bd07ff;
+    color: #ffffff;
+}
+
+.social_btn{
+    text-decoration: none;
+    color: white;
+    display: block; /* add this to make the text appear below the image */
+}
+
+.social_image{
+    height: 90px;
+    width: auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.socials {
+    display: flex; /* Используем flex для размещения всех блоков в строку */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    justify-content: center; /* Центрируем блоки по горизонтали */
+}
+
+.social_preview {
+    display: flex; /* Используем flex для размещения элементов */
+    flex-direction: column; /* Элементы внутри будут располагаться вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    margin-right: 90px; /* Добавляем отступ между блоками */
+}
+
+.social_preview:last-child {
+    margin-right: 0; /* Убираем последний отступ справа */
+}
+
+.contacts__block:after{
+    content: "";
+    display: block;
+    width: 1800px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 140px;
+}
+
+
+
+.section{
+    padding: 10px 30px;
+}
+
+.section__header{
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 40px;
+    text-align: center;
+    
+}
+
+.section:before{
+    content: "";
+    display: block;
+    width: 1800px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 60px auto;
+}
+.section1:before{
+    content: "";
+    display: block;
+    width: 1800px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 60px auto;
+}
+
+.game__info{
+    margin: 0;
+    padding: 60px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.game__image{
+    float: left;
+    margin-right: 30px;
+}
+
+game__text{
+    margin-left: 20px;
+    margin-bottom: 6px;
+}
+
+
+.section1{
+    padding: 90px 30px;
+}
+
+.section__title{
+    text-align: center;
+}
+
+.section__title:after{
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 400px;
+    height: 1px;
+    margin: 20px auto;
+}
+
+.game__text_1{
+    margin-top: 30px;
+}
+
+.game__info_allinfo{
+    margin-top: 60px;
+}
+
+.contacts__block:before
+{
+    content: "";
+    display: block;
+    width: 1800px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 60px auto;
+}
+
+.all_r{
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.87);
+    padding-top: 30px;
+}
