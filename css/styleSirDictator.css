@@ -1,17 +1,13 @@
 body{
     margin: 0;
-    align-items: center;
-    padding: 0;
-background-image: url('../Images/bg.png');
-    display: flex;
-    flex-direction: column;
+background-image: url('../Images/bg1.jpg');
 
 background-repeat: no-repeat;
 
 background-position: center center;
 
 background-attachment: fixed;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Special Elite", system-ui;
     background-size: cover;
 letter-spacing: 0.1rem;
         font-size: large;
@@ -20,11 +16,25 @@ letter-spacing: 0.1rem;
         
 
 }
+
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+*,
+*:before,
+*:after{
+        box-sizing: border-box;
+}
+
+
 .grid{
     display: grid;
     grid-template-rows: 6rem 5rem auto 5rem;
     grid-template-columns: 20% auto 20%;
     font-size: 1.5rem;
+    
     
 }
 
@@ -37,15 +47,7 @@ letter-spacing: 0.1rem;
         grid-column: 1 / 4;
     }
 }
-h1, h2, h3, h4, h5, h6{
-    margin: 0;
-}
 
-*,
-*:before,
-*:after{
-        box-sizing: border-box;
-}
 
 .container{
     width: 100%;
@@ -278,12 +280,18 @@ h1, h2, h3, h4, h5, h6{
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.intro_title_all{
+    width: 100%;
+    height: auto;
+}
+
 .game__image{
     float: left;
     margin-right: 30px;
     box-shadow: 0 0 10px black;
-    max-width: 100%;
+    max-width: 62%;
     height: auto;
+    size: auto;
 }
 
 game__text{
@@ -332,4 +340,9 @@ game__text{
     margin-top: 30px;
     background-color: rgba(0, 0, 0, 0.87);
     padding-top: 30px;
+}
+
+.Slogan{
+    margin-top: 20px;
+    font-style: italic;
 }
