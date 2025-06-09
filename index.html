@@ -2,127 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="shortcut icon" href="Images/logotype.png" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script src="translations.js"></script>
-<script src="language-switch.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepDev</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+    <script src="language-switch.js"></script>
 </head>
 <body>
-  <header class="header">
-      <div class="container">
-          <div class="header__inner">
-              <div class="header__logo">DeepDev</div>
-              
-              <nav class="nav">
-                <a class="nav__link" href="#aboutus">About</a>
-                <a class="nav__link" href="#gamesinfos">Games</a>
-                <a class="nav__link" href="#contactsj">Conatct</a>
-                <a class="nav__link" href="privacy.html">Privacy</a>
-                
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">DeepDev</div>
                 <nav class="nav">
                     <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
-                    <a class="nav__link" href="devSim.html" data-i18n="nav_games">Games</a>
+                    <a class="nav__link" href="#games" data-i18n="nav_games">Games</a>
+                    <a class="nav__link" href="#contact" data-i18n="nav_contact">Contact</a>
+                    <a class="nav__link" href="privacy.html" data-i18n="nav_privacy">Privacy</a>
                     <select id="language-select" class="language-select">
                         <option value="en">English</option>
                         <option value="ru">Русский</option>
                         <option value="es">Español</option>
                     </select>
                 </nav>
-                
-              </nav>
-          </div>
-      </div>
-  </header>
-  
-  
-  
-   <div class="intro">
-       <div class="container">
-           <div class="intro__inner">
-                    <h1 class="intro__title1">Deep Dev</h1>
-                    <h1 class="intro__title">studio</h1>
-                    <a class="btn" href="#aboutus">More Information</a>
-           </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title" data-i18n="intro_title">DeepDev</h1>
+                <h2 class="intro__title1" data-i18n="intro_subtitle">Studio</h2>
+                <a class="btn" href="#about" data-i18n="btn_more_info">More Information</a>
+            </div>
         </div>
     </div>
-    
-    
-    
-    
-    <section class="section">
-        <p id="aboutus"></p>
+
+    <section class="section" id="about">
         <div class="container">
             <div class="section__header">
-                <h2 class="section__title">Information about us</h2>
-                <div class="section__text">
-                    <p>
-                        An indie developer from Russia who developing 2D simulators for mobile and other devices. 
-                        We believe that our games can entertain you!
-                    </p>
+                <h2 class="section__title" data-i18n="section_about">Information About Us</h2>
+            </div>
+            <div class="game__info">
+                <p data-i18n="about_text">An indie developer from Russia who is developing 2D simulators for mobile and other devices. We believe that our games can entertain you!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section1" id="games">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title" data-i18n="section_games">Our Projects</h2>
+            </div>
+            <div class="game__info">
+                <img src="Images/devSimIcon.png" class="game__image" alt="Developer Simulator">
+                <div class="game__text">
+                    <h3 data-i18n="game_title">Developer Simulator</h3>
+                    <p data-i18n="game_desc">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</p>
+                    <a href="devSim.html" class="btn" data-i18n="btn_download">Download</a>
                 </div>
             </div>
         </div>
-        
-        
-        <section class="section1">
-                   <p id="gamesinfos"></p>
-                    <h2 class="section__title">Our Projects</h2>
-                    <div class="game__info">
-                        <img class="game__image" src="Images/game1phto.png" alt="">
-                        <div class="game__info_allinfo">
-                            <h1 class="game__text">Developer Simulator</h1>
-                            <h4 class="game__text_1">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</h4>
-                            <a class="btn2" href="devSim.html">Download</a>
-                        </div>
-                    </div>
-        </section>
-        
-        
     </section>
-    
-    <section class="contacts__block">
-        <p id="contactsj"></p>
-            <h2 class="section__title">Contacts</h2>-
-            <div class="container">
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title" data-i18n="section_contacts">Contacts</h2>
+            </div>
+            <div class="contacts__block">
                 <div class="socials">
-                   <div class="social_preview">
-                        <img class="social_image" src="Images/telegram.png" alt="">
-                        <a class="social_btn" href="https://t.me/deepdevapps">Telegram</a>
-                   </div>
-               
                     <div class="social_preview">
-                    <img class="social_image" src="Images/youtube.png" alt="">
-                    <a class="social_btn" href="https://www.youtube.com/@DeepDevApps">YouTube</a>
-               </div>
-                <div class="social_preview">
-                    <img class="social_image" src="Images/envelope.png" alt="">
-                    <a class="social_btn" href="pavlik0804channel@gmail.com">Email</a>
-               </div>
+                        <a href="https://t.me/DeepDevApps" class="social_btn">
+                            <img src="Images/telegram.png" class="social_image" alt="Telegram">
+                            <span data-i18n="contact_telegram">Telegram</span>
+                        </a>
+                    </div>
+                    <div class="social_preview">
+                        <a href="https://www.youtube.com/@DeepDevApps" class="social_btn">
+                            <img src="Images/youtube.png" class="social_image" alt="YouTube">
+                            <span data-i18n="contact_youtube">YouTube</span>
+                        </a>
+                    </div>
+                    <div class="social_preview">
+                        <a href="mailto:pavlik0804channel@gmail.com" class="social_btn" data-i18n-placeholder="contact_email">
+                            <img src="Images/email.png" class="social_image" alt="Email">
+                            <span data-i18n="contact_email">Email</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-                
-            </div>
-        
+        </div>
     </section>
-    
-<section class="all rights receivecd">
-    <div class="all_r">
-        <h5>© 2024 DeepDev - All Rights Received</h5>
-    </div>
-</section>
-    
-    
-    
-    
-    
-    
-    
+
+    <footer class="all_r">
+        <p data-i18n="footer">© 2025 DeepDev - All Rights Reserved</p>
+    </footer>
 </body>
 </html>
