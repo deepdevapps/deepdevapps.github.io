@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Simulator - DeepDev</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="translations.js"></script>
-    <script src="language-switch.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="Images/logotype.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Developer Simulator</title>
+    <style>
+        /* Добавьте это правило для плавной прокрутки */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -14,13 +25,8 @@
             <div class="header__inner">
                 <div class="header__logo">DeepDev</div>
                 <nav class="nav">
-                    <a class="nav__link" href="index.html" data-i18n="nav_main">Main</a>
-                    <a class="nav__link" href="privacy.html" data-i18n="nav_privacy">Privacy</a>
-                    <select id="language-select" class="language-select">
-                        <option value="en">English</option>
-                        <option value="ru">Русский</option>
-                        <option value="es">Español</option>
-                    </select>
+                    <a class="nav__link" href="index.html">MAIN</a>
+                    <a class="nav__link" href="devsimprivacy.html">Privacy</a>
                 </nav>
             </div>
         </div>
@@ -29,43 +35,42 @@
     <div class="intro">
         <div class="container">
             <div class="intro__inner">
-                <h1 class="intro__title" data-i18n="devsim_title">Developer Simulator</h1>
-                <h2 class="intro__title1" data-i18n="devsim_subtitle">Simulator</h2>
-                <a class="btn" href="#download" data-i18n="btn_more_info">More Information</a>
+                <h1 class="intro__title1">Developer</h1>
+                <h1 class="intro__title">Simulator</h1>
+                <a class="btn" href="#aboutus">More Information</a>
             </div>
         </div>
     </div>
 
-    <section class="section" id="game-info">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title" data-i18n="game_title">Developer Simulator</h2>
-            </div>
-            <div class="game__info">
-                <img src="Images/devSimIcon.png" class="game__image" alt="Developer Simulator">
-                <div class="game__text">
-                    <p data-i18n="devsim_desc">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</p>
-                    <a href="#download" class="btn" data-i18n="btn_download">Download</a>
-                </div>
+    <section class="section1">
+        <p id="gamesinfos"></p>
+        <h2 class="section__title">Developer Simulator</h2>
+        <div class="game__info">
+            <img class="game__image" src="Images/game1phto.png" alt="">
+            <div class="game__info_allinfo">
+                <h1 class="game__text">Developer Simulator</h1>
+                <h4 id="aboutus" class="game__text_1">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</h4>
+                <a class="btn2" href="#download">Download</a>
             </div>
         </div>
     </section>
 
-    <section class="section1" id="download">
+    <section class="contacts__block">
+        <p id="download"></p>
+        <h2 class="section__title">Download</h2>
         <div class="container">
-            <div class="section__header">
-                <h2 class="section__title" data-i18n="devsim_download_title">Download</h2>
-            </div>
-            <div class="game__info">
-                <p data-i18n="devsim_download_text">In Developing. Subscribe to us on social networks to follow the progress of development</p>
-                <a href="index.html" class="btn" data-i18n="btn_back_to_main">Back to Main</a>
-            </div>
+            <h1 class="intro__title1">In Developing</h1>
+            <h1>Subscribe to us on social networks to follow the progress of development</h1>
+            <a class="btn" href="index.html">Back to main</a>
         </div>
     </section>
 
-    <footer class="all_r">
-        <p data-i18n="footer">© 2025 DeepDev - All Rights Reserved</p>
-    </footer>
+    <section class="all rights receivecd">
+        <div class="all_r">
+            <h5>© 2024 DeepDev - All Rights Reserved</h5>
+        </div>
+    </section>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
