@@ -287,6 +287,7 @@ html {
     box-shadow: 0 0 10px black;
     max-width: 100%;
     height: auto;
+    width: 36%
 }
 
 game__text{
@@ -335,4 +336,24 @@ game__text{
     margin-top: 30px;
     background-color: rgba(0, 0, 0, 0.87);
     padding-top: 30px;
+}
+.language-select {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-family: "Inconsolata", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background .2s linear, color .1s linear;
+}
+.language-select:hover {
+    background-color: darkorange;
+    color: #ffffff;
+}
+.language-select option {
+    background-color: #333;
+    color: white;
 }

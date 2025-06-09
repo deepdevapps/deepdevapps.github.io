@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="translations.js"></script>
+<script src="language-switch.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>DeepDev</title>
@@ -23,7 +25,17 @@
                 <a class="nav__link" href="#aboutus">About</a>
                 <a class="nav__link" href="#gamesinfos">Games</a>
                 <a class="nav__link" href="#contactsj">Conatct</a>
-                <a class="nav__link" href="https://deepdevapps.github.io/privacy">Privacy</a>
+                <a class="nav__link" href="privacy.html">Privacy</a>
+                
+                <nav class="nav">
+                    <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
+                    <a class="nav__link" href="devSim.html" data-i18n="nav_games">Games</a>
+                    <select id="language-select" class="language-select">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="es">Español</option>
+                    </select>
+                </nav>
                 
               </nav>
           </div>
@@ -68,7 +80,7 @@
                         <div class="game__info_allinfo">
                             <h1 class="game__text">Developer Simulator</h1>
                             <h4 class="game__text_1">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</h4>
-                            <a class="btn2" href="https://deepdevapps.github.io/devSim">Download</a>
+                            <a class="btn2" href="devSim.html">Download</a>
                         </div>
                     </div>
         </section>
