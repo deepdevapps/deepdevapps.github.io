@@ -2,117 +2,668 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSquad - Indie Game Studio</title>
     <link rel="shortcut icon" href="Images/logotype.png" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>DeepDev</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Images/pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .hero__title {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero__subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: white;
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background-color: var(--light);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section__title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section__title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section__text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--gray);
+        }
+        
+        /* Games Section */
+        .games {
+            background-color: #f8f9fa;
+        }
+        
+        .game-card {
+            display: flex;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .game__image {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .game__info {
+            padding: 30px;
+            flex: 1;
+        }
+        
+        .game__title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .game__description {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .btn2 {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn2:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        /* Contacts Section */
+        .contacts {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+		.socials {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 30px;
+		}
+
+		.social-card {
+			background-color: white;
+			border-radius: 15px;
+			padding: 30px;
+			text-align: center;
+			width: 250px;
+			transition: all 0.3s ease;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.social-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+		}
+
+		.social__icon {
+			width: 60px;
+			height: 60px;
+			margin-bottom: 20px;
+			object-fit: contain;
+		}
+
+		.social__btn {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: var(--primary);
+			color: white;
+			border-radius: 50px;
+			text-decoration: none;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.social__btn:hover {
+			background-color: var(--primary-dark);
+		}
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before {
+            top: -8px;
+        }
+        
+        .hamburger:after {
+            top: 8px;
+        }
+        
+        .menu-toggle.active .hamburger {
+            background-color: transparent;
+        }
+        
+        .menu-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .menu-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero__title {
+                font-size: 60px;
+            }
+            
+            .game-card {
+                flex-direction: column;
+            }
+            
+            .game__image {
+                width: 100%;
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero__title {
+                font-size: 48px;
+            }
+            
+            .hero__subtitle {
+                font-size: 20px;
+            }
+            
+            .section__title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero__title {
+                font-size: 36px;
+            }
+            
+            .hero__subtitle {
+                font-size: 18px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+            
+            .section__title {
+                font-size: 30px;
+            }
+            
+            .game__title {
+                font-size: 24px;
+            }
+            
+            .social-card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-      <div class="container">
-          <div class="header__inner">
-              <div class="header__logo">DeepDev</div>
-              
-              <nav class="nav">
-                <a class="nav__link" href="#aboutus">About</a>
-                <a class="nav__link" href="#gamesinfos">Games</a>
-                <a class="nav__link" href="#contactsj">Conatct</a>
-                <a class="nav__link" href="privacy.html">Privacy</a>
-                
-                
-                
-              </nav>
-          </div>
-      </div>
-  </header>
-  
-  
-  
-   <div class="intro">
-       <div class="container">
-           <div class="intro__inner">
-                    <h1 class="intro__title1">Deep Dev</h1>
-                    <h1 class="intro__title">studio</h1>
-                    <a class="btn" href="#aboutus">More Information</a>
-           </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    <section class="section">
-        <p id="aboutus"></p>
+    <!-- Header -->
+    <header id="header">
         <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">Information about us</h2>
+            <div class="header__inner">
+                <a href="#" class="header__logo">DeepSquad</a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="#about">About</a>
+                    <a class="nav__link" href="#games">Games</a>
+                    <a class="nav__link" href="#contacts">Contact</a>
+                    <a class="nav__link" href="privacy.html">Privacy</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content animate__animated animate__fadeIn">
+                <h1 class="hero__title animate__animated animate__fadeInUp">DeepSquad</h1>
+                <p class="hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Creating immersive 2D experiences for mobile and beyond</p>
+                <a href="#about" class="btn btn-primary animate__animated animate__fadeInUp animate-delay-2">Explore More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section__header animate__animated animate__fadeIn">
+                <h2 class="section__title">About Us</h2>
                 <div class="section__text">
                     <p>
-                        An indie developer from Russia who developing 2D simulators for mobile and other devices. 
-                        We believe that our games can entertain you!
+                        We are DeepSquad, an indie game studio passionate about creating engaging 2D simulators for mobile and other platforms. 
+                        Based in Russia, our team is dedicated to crafting unique gaming experiences that entertain and inspire players worldwide.
                     </p>
                 </div>
             </div>
         </div>
-        
-        
-        <section class="section1">
-                   <p id="gamesinfos"></p>
-                    <h2 class="section__title">Our Projects</h2>
-                    <div class="game__info">
-                        <img class="game__image" src="Images/game1phto.png" alt="">
-                        <div class="game__info_allinfo">
-                            <h1 class="game__text">Developer Simulator</h1>
-                            <h4 class="game__text_1">A realistic game and application development simulator. Create companies, hire employees, pump up skills, open new offices and more!</h4>
-                            <a class="btn2" href="devSim.html">Download</a>
-                        </div>
-                    </div>
-        </section>
-        
-        
     </section>
     
-    <section class="contacts__block">
-        <p id="contactsj"></p>
-            <h2 class="section__title">Contacts</h2>-
-            <div class="container">
-                <div class="socials">
-                   <div class="social_preview">
-                        <img class="social_image" src="Images/telegram.png" alt="">
-                        <a class="social_btn" href="https://t.me/deepdevapps">Telegram</a>
-                   </div>
-               
-                    <div class="social_preview">
-                    <img class="social_image" src="Images/youtube.png" alt="">
-                    <a class="social_btn" href="https://www.youtube.com/@DeepDevApps">YouTube</a>
-               </div>
-                <div class="social_preview">
-                    <img class="social_image" src="Images/envelope.png" alt="">
-                    <a class="social_btn" href="pavlik0804channel@gmail.com">Email</a>
-               </div>
+    <!-- Games Section -->
+    <section class="section games" id="games">
+        <div class="container">
+            <div class="section__header animate__animated animate__fadeIn">
+                <h2 class="section__title">Our Projects</h2>
             </div>
+            
+            <div class="game-card animate__animated animate__fadeInUp">
+                <img class="game__image" src="Images/game1photo.png" alt="Developer Simulator">
+                <div class="game__info">
+                    <h3 class="game__title">Developer Simulator</h3>
+                    <p class="game__description">
+                        A realistic game and application development simulator. Create companies, hire employees, 
+                        improve skills, open new offices and much more in this immersive business simulation!
+                    </p>
+                    <a class="btn2" href="devSim.html">Download Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contacts Section -->
+    <section class="section contacts" id="contacts">
+        <div class="container">
+            <div class="section__header animate__animated animate__fadeIn">
+                <h2 class="section__title">Contact Us</h2>
+            </div>
+            
+			<div class="socials">
+				<div class="social-card">
+					<img class="social__icon" src="Images/telegram.png" alt="Telegram">
+					<a class="social__btn" href="https://t.me/deepdevapps">Telegram</a>
+				</div>
+				
+				<div class="social-card">
+					<img class="social__icon" src="Images/youtube.png" alt="YouTube">
+					<a class="social__btn" href="https://www.youtube.com/@DeepDevApps">YouTube</a>
+				</div>
+				
+				<div class="social-card">
+					<img class="social__icon" src="Images/envelope.png" alt="Email">
+					<a class="social__btn" href="mailto:pavlik0804channel@gmail.com">Email Us</a>
+				</div>
+			</div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2025 DeepSquad - All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-            </div>
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
         
-    </section>
-    
-<section class="all rights receivecd">
-    <div class="all_r">
-        <h5>© 2024 DeepDev - All Rights Received</h5>
-    </div>
-</section>
-    
-    
-    
-    
-    
-    
-    
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate__animated');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    element.classList.add(animationClass);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
 </html>

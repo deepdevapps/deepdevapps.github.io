@@ -2,12 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting | DeepSquad</title>
+    <link rel="shortcut icon" href="Images/logotype.png" />
     <meta http-equiv="refresh" content="1;mailto:pavlik0804channel@gmail.com" />
-
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --light: #F5F6FA;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .redirect-container {
+            max-width: 500px;
+            padding: 40px;
+        }
+        
+        .redirect-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .redirect-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(108, 92, 231, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 576px) {
+            .redirect-title {
+                font-size: 28px;
+            }
+            
+            .redirect-text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1 class="header">Redirect</h1>
+    <div class="redirect-container">
+        <div class="spinner"></div>
+        <h1 class="redirect-title">Redirecting to Email</h1>
+        <p class="redirect-text">You are being redirected to your email client to contact us. If redirection doesn't work, please email us directly at pavlik0804channel@gmail.com</p>
+    </div>
 </body>
 </html>
