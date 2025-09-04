@@ -1,27 +1,31 @@
-// --- Универсальный скрипт для Cookie-баннера ---
+// --- Universal Cookie Banner Script ---
 
-// 1. Функция для инициализации Google Analytics
-// Эта функция будет вызвана только после того, как пользователь даст согласие.
+// 1. Function to initialize Google Analytics
+// This function will only be called after the user gives consent.
 function initGoogleAnalytics() {
-    console.log("Согласие на cookie получено. Инициализация Google Analytics...");
+    console.log("Cookie consent granted. Initializing Google Analytics...");
+    // 
+    // !!! PASTE YOUR GOOGLE ANALYTICS (gtag.js) SCRIPT HERE !!!
+    // 
+    // Example of what it might look like:
+    /*
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID'; // Replace YOUR_GA_ID
+    document.head.appendChild(gaScript);
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y005JT3FBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y005JT3FBH');
-</script>
-
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA_ID'); // Replace YOUR_GA_ID
+    */
 }
 
-// Запускаем основной код после полной загрузки страницы
+// Run the main code after the page has fully loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 2. Определяем CSS-стили для баннера
-    // Стили встроены прямо в скрипт, чтобы сделать его независимым.
+    // 2. Define the CSS styles for the banner
+    // The styles are embedded directly in the script to make it self-contained.
     const bannerStyles = `
         #cookie-consent-banner {
             position: fixed;
@@ -31,15 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
             background-color: rgba(255, 255, 255, 0.98);
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            display: none; /* По умолчанию скрыт */
+            display: none; /* Hidden by default */
             align-items: center;
             justify-content: center;
             gap: 20px;
             z-index: 2000;
             flex-wrap: wrap;
             text-align: center;
-            font-family: 'Poppins', sans-serif; /* Используем основной шрифт сайта */
-            /* Локально определяем переменные цвета для независимости стилей */
+            font-family: 'Poppins', sans-serif; /* Use the site's main font */
+            /* Locally define color variables for style independence */
             --primary: #6C5CE7;
             --primary-dark: #5649C0;
             --dark: #2D3436;
@@ -98,27 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
 
-    // 3. Определяем HTML-содержимое баннера
+    // 3. Define the HTML content for the banner
     const bannerHTML = `
-        <p>Мы используем файлы cookie для улучшения вашего опыта и анализа нашего трафика. Нажимая «Принять», вы соглашаетесь на использование нами файлов cookie для аналитики. <a href="/privacy.html">Узнать больше</a>.</p>
+        <p>We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you agree to our use of cookies for analytics. <a href="/privacy.html">Learn more</a>.</p>
         <div class="cookie-buttons">
-            <button id="decline-cookies" class="btn-cookie btn-cookie-decline">Отклонить</button>
-            <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Принять</button>
+            <button id="decline-cookies" class="btn-cookie btn-cookie-decline">Decline</button>
+            <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Accept</button>
         </div>
     `;
 
-    // 4. Внедряем CSS на страницу
+    // 4. Inject the CSS onto the page
     const styleSheet = document.createElement("style");
     styleSheet.innerText = bannerStyles;
     document.head.appendChild(styleSheet);
 
-    // 5. Внедряем HTML баннера на страницу
+    // 5. Inject the banner's HTML onto the page
     const bannerElement = document.createElement("div");
     bannerElement.id = "cookie-consent-banner";
     bannerElement.innerHTML = bannerHTML;
     document.body.appendChild(bannerElement);
 
-    // 6. Запускаем логику проверки согласия
+    // 6. Run the consent check logic
     const acceptBtn = document.getElementById('accept-cookies');
     const declineBtn = document.getElementById('decline-cookies');
 
@@ -127,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (consentStatus === 'granted') {
         initGoogleAnalytics();
     } else if (consentStatus === 'denied') {
-        // Ничего не делаем, если пользователь ранее отказался
+        // Do nothing if the user previously declined
     } else {
-        // Показываем баннер, если выбор еще не сделан
+        // Show the banner if a choice has not yet been made
         bannerElement.style.display = 'flex';
     }
 
-    // Обработчики кликов по кнопкам
+    // Click handlers for the buttons
     acceptBtn.addEventListener('click', () => {
         localStorage.setItem('cookie_consent', 'granted');
         bannerElement.style.display = 'none';
