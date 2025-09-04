@@ -6,12 +6,10 @@
     <title>DeepSquad - Indie Game Studio</title>
     <link rel="shortcut icon" href="Images/logotype.png" />
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
@@ -395,6 +393,31 @@
             background-color: var(--primary);
             transition: all 0.3s ease;
         }
+		
+		        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: transparent;
+            color: var(--dark);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
         
         .hamburger:before {
             top: -8px;
@@ -417,6 +440,76 @@
             transform: rotate(-45deg);
             top: 0;
         }
+
+        /* --- НАЧАЛО: Стили для баннера Cookie --- */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98); /* Белый фон с прозрачностью, как у хедера */
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: none; /* Скрыт по умолчанию */
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            z-index: 2000;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        #cookie-consent-banner p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--gray);
+            flex-grow: 1;
+            max-width: 700px;
+        }
+        #cookie-consent-banner p a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        #cookie-consent-banner p a:hover {
+            text-decoration: underline;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+        .btn-cookie {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .btn-cookie-accept {
+            background-color: var(--primary);
+            color: white;
+        }
+        .btn-cookie-accept:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .btn-cookie-decline {
+            background-color: #E2E8F0; /* Светло-серый фон */
+            color: var(--dark);
+        }
+        .btn-cookie-decline:hover {
+            background-color: #CBD5E0; /* Серый потемнее при наведении */
+        }
+        @media (max-width: 768px) {
+            #cookie-consent-banner {
+                flex-direction: column;
+            }
+        }
+        /* --- КОНЕЦ: Стили для баннера Cookie --- */
         
         /* Responsive Styles */
         @media (max-width: 992px) {
@@ -499,19 +592,7 @@
         }
     </style>
 </head>
-	
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y005JT3FBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y005JT3FBH');
-</script>
-
 <body>
-    <!-- Header -->
     <header id="header">
         <div class="container">
             <div class="header__inner">
@@ -526,12 +607,15 @@
                     <a class="nav__link" href="#games">Games</a>
                     <a class="nav__link" href="#contacts">Contact</a>
                     <a class="nav__link" href="privacy.html">Privacy</a>
+					                    <div class="language-switcher">
+                        <a href="/en/index.html" class="lang-btn  active">EN</a>
+                        <a href="/ru/index.html" class="lang-btn">RU</a>
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
     
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero__content animate__animated animate__fadeIn">
@@ -542,7 +626,6 @@
         </div>
     </section>
     
-    <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="section__header animate__animated animate__fadeIn">
@@ -557,7 +640,6 @@
         </div>
     </section>
     
-    <!-- Games Section -->
     <section class="section games" id="games">
         <div class="container">
             <div class="section__header animate__animated animate__fadeIn">
@@ -578,7 +660,6 @@
         </div>
     </section>
     
-    <!-- Contacts Section -->
     <section class="section contacts" id="contacts">
         <div class="container">
             <div class="section__header animate__animated animate__fadeIn">
@@ -604,13 +685,19 @@
         </div>
     </section>
     
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p class="footer__text">© 2025 DeepSquad - All Rights Reserved</p>
         </div>
     </footer>
-    
+
+    <div id="cookie-consent-banner">
+        <p>Мы используем файлы cookie для улучшения вашего опыта и анализа нашего трафика. Нажимая «Принять», вы соглашаетесь на использование нами файлов cookie для аналитики. <a href="privacy.html">Узнать больше</a>.</p>
+        <div class="cookie-buttons">
+            <button id="decline-cookies" class="btn-cookie btn-cookie-decline">Отклонить</button>
+            <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Принять</button>
+        </div>
+    </div>
     <script>
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -676,6 +763,55 @@
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
     </script>
-</body>
 
+    <script>
+    // 1. Функция для инициализации Google Analytics
+    // Она будет вызвана только после получения согласия.
+    function initGoogleAnalytics() {
+        console.log("Cookie consent granted. Initializing Google Analytics...");
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y005JT3FBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y005JT3FBH');
+</script>
+
+    }
+
+    // 2. Основная логика для управления баннером
+    document.addEventListener('DOMContentLoaded', () => {
+        const consentBanner = document.getElementById('cookie-consent-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+
+        const consentStatus = localStorage.getItem('cookie_consent');
+
+        if (consentStatus === 'granted') {
+            // Если согласие уже дано, просто запускаем аналитику
+            initGoogleAnalytics();
+        } else if (consentStatus === 'denied') {
+            // Если пользователь ранее отказался, ничего не делаем
+            console.log("Cookie consent was previously denied.");
+        } else {
+            // Если статус не установлен, показываем баннер
+            consentBanner.style.display = 'flex';
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'granted');
+            consentBanner.style.display = 'none';
+            initGoogleAnalytics();
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent', 'denied');
+            consentBanner.style.display = 'none';
+        });
+    });
+    </script>
+    </body>
 </html>
