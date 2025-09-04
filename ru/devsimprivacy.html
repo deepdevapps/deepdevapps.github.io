@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности Developer Simulator | DeepSquad</title>
+    <link rel="shortcut icon" href="Images/logotype.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .policy-hero {
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-top: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .policy-hero__title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-hero__subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        /* Policy Content */
+        .policy-section {
+            padding: 40px 0;
+        }
+        
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .policy-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-item {
+            margin-bottom: 40px;
+        }
+        
+        .policy-item__title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .policy-item__text {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .policy-list {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .policy-list li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before {
+            top: -8px;
+        }
+        
+        .hamburger:after {
+            top: 8px;
+        }
+        
+        .menu-toggle.active .hamburger {
+            background-color: transparent;
+        }
+        
+        .menu-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .menu-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .policy-hero__title {
+                font-size: 36px;
+            }
+            
+            .policy-hero__subtitle {
+                font-size: 18px;
+            }
+            
+            .policy-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .policy-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .policy-hero__title {
+                font-size: 30px;
+            }
+            
+            .policy-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">DeepSquad</a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="index.html">Главная</a>
+                    <a class="nav__link" href="devSim.html">Страница игры</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="policy-hero animate__animated animate__fadeIn">
+        <div class="container">
+            <div>
+                <h1 class="policy-hero__title animate__animated animate__fadeInUp">Политика конфиденциальности</h1>
+                <p class="policy-hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Developer Simulator</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="policy-section">
+        <div class="policy-container animate__animated animate__fadeIn">
+            <h2 class="policy-title">Политика конфиденциальности Developer Simulator</h2>
+            
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">1. Применение</h3>
+                <p class="policy-item__text">
+                    Настоящая политика конфиденциальности применима к приложению Developer Simulator (далее — «Приложение») 
+                    для мобильных устройств, которое было разработано DeepSquad (далее — «Поставщик услуг») как 
+                    условно-бесплатный сервис. Эта услуга предоставляется «КАК ЕСТЬ».
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">2. Сбор информации</h3>
+                <p class="policy-item__text">
+                    Приложение получает информацию, которую вы предоставляете при загрузке и регистрации Приложения. 
+                    Регистрация у Поставщика услуг не является обязательной. Однако имейте в виду, что вы не сможете 
+                    использовать некоторые функции, предлагаемые Приложением, если не зарегистрируетесь у них.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">3. Автоматически собираемая информация</h3>
+                <p class="policy-item__text">
+                    Приложение может собирать определенную информацию автоматически, включая, но не ограничиваясь, тип 
+                    мобильного устройства, которое вы используете, уникальный идентификатор вашего мобильного устройства, IP-адрес вашего мобильного устройства, 
+                    вашу мобильную операционную систему, тип мобильных интернет-браузеров, которые вы используете, и информацию о 
+                    том, как вы используете Приложение.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">4. Информация о местоположении</h3>
+                <p class="policy-item__text">
+                    Это Приложение не собирает точную информацию о местоположении вашего мобильного устройства.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">5. Сторонние сервисы</h3>
+                <p class="policy-item__text">
+                    Только агрегированные, анонимизированные данные периодически передаются внешним службам, чтобы помочь Поставщику 
+                    услуг в улучшении Приложения и их сервиса. Поставщик услуг может делиться вашей информацией 
+                    с третьими лицами способами, описанными в настоящем заявлении о конфиденциальности.
+                </p>
+                <p class="policy-item__text">
+                    Обратите внимание, что Приложение использует сторонние сервисы, у которых есть собственная Политика конфиденциальности 
+                    в отношении обработки данных. Ниже приведены ссылки на Политику конфиденциальности сторонних поставщиков услуг, используемых 
+                    Приложением:
+                </p>
+                <ul class="policy-list">
+                    <li>Сервисы Google Play</li>
+                    <li>Unity</li>
+                </ul>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">6. Раскрытие данных</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг может раскрывать предоставленную пользователем и автоматически собранную информацию:
+                </p>
+                <ul class="policy-list">
+                    <li>в соответствии с требованиями закона, например, для исполнения судебной повестки или аналогичного судебного процесса;</li>
+                    <li>когда они добросовестно полагают, что раскрытие необходимо для защиты их прав, защиты вашей безопасности или безопасности других, расследования мошенничества или ответа на правительственный запрос;</li>
+                    <li>с их доверенными поставщиками услуг, которые работают от их имени.</li>
+                </ul>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">7. Право на отказ</h3>
+                <p class="policy-item__text">
+                    Вы можете легко прекратить сбор всей информации Приложением, удалив Приложение. 
+                    Вы можете использовать стандартные процессы удаления, которые могут быть доступны как часть вашего мобильного устройства или через 
+                    торговую площадку мобильных приложений или сеть.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">8. Хранение данных</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг будет хранить предоставленные пользователем данные до тех пор, пока вы используете Приложение, и в течение 
+                    разумного времени после этого. Поставщик услуг будет хранить автоматически собранную информацию до 
+                    24 месяцев, а затем может хранить ее в агрегированном виде.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">9. Конфиденциальность детей</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг не использует Приложение для сознательного сбора данных или маркетинга для детей 
+                    в возрасте до 13 лет. Приложение не предназначено для лиц моложе 13 лет. Поставщик услуг 
+                    не собирает сознательно личную информацию от детей в возрасте до 13 лет.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">10. Безопасность</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг обеспокоен сохранением конфиденциальности вашей информации. Поставщик 
+                    услуг предоставляет физические, электронные и процедурные гарантии для защиты информации, которую мы обрабатываем и 
+                    храним.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">11. Изменения в этой Политике</h3>
+                <p class="policy-item__text">
+                    Настоящая Политика конфиденциальности может время от времени обновляться по любой причине. Поставщик услуг уведомит 
+                    вас о любых изменениях в Политике конфиденциальности, обновив эту страницу новой Политикой конфиденциальности.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">12. Ваше согласие</h3>
+                <p class="policy-item__text">
+                    Используя Приложение, вы даете свое согласие на обработку Поставщиком услуг вашей 
+                    информации, как это изложено в настоящей Политике конфиденциальности сейчас и с поправками, внесенными нами.
+                </p>
+            </div>
+            
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">13. Свяжитесь с нами</h3>
+                <p class="policy-item__text">
+                    Если у вас есть какие-либо вопросы относительно конфиденциальности при использовании Приложения или вопросы о наших 
+                    практиках, пожалуйста, свяжитесь с нами по электронной почте 
+                    <a href="mailto:pavlik0804channel@gmail.com" style="color: var(--primary);">pavlik0804channel@gmail.com</a>.
+                </p>
+            </div>
+            
+            <p class="policy-item__text" style="margin-top: 40px; font-style: italic;">
+                Настоящая политика конфиденциальности вступает в силу с 09.02.2025
+            </p>
+            
+            <a href="devSim.html" class="back-btn">← Назад на страницу игры</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2025 DeepSquad - Все права защищены</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate__animated');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    element.classList.add(animationClass);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
