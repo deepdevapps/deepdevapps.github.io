@@ -4,21 +4,17 @@
 // This function will only be called after the user gives consent.
 function initGoogleAnalytics() {
     console.log("Cookie consent granted. Initializing Google Analytics...");
-    // 
-    // !!! PASTE YOUR GOOGLE ANALYTICS (gtag.js) SCRIPT HERE !!!
-    // 
-    // Example of what it might look like:
-    /*
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID'; // Replace YOUR_GA_ID
-    document.head.appendChild(gaScript);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'YOUR_GA_ID'); // Replace YOUR_GA_ID
-    */
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y005JT3FBH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y005JT3FBH');
+</script>
+
 }
 
 // Run the main code after the page has fully loaded
