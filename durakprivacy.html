@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Durak Mobile Privacy Policy | DeepSquad</title>
+    <link rel="shortcut icon" href="Images/logotype.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .policy-hero {
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-top: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .policy-hero__title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-hero__subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        /* Policy Content */
+        .policy-section {
+            padding: 40px 0;
+        }
+        
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .policy-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-item {
+            margin-bottom: 40px;
+        }
+        
+        .policy-item__title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .policy-item__text {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .policy-list {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .policy-list li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .policy-list li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .policy-list li a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before {
+            top: -8px;
+        }
+        
+        .hamburger:after {
+            top: 8px;
+        }
+        
+        .menu-toggle.active .hamburger {
+            background-color: transparent;
+        }
+        
+        .menu-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .menu-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        
+        .credit-note {
+            font-size: 13px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .credit-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .credit-note a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .policy-hero__title {
+                font-size: 36px;
+            }
+            
+            .policy-hero__subtitle {
+                font-size: 18px;
+            }
+            
+            .policy-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .policy-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .policy-hero__title {
+                font-size: 30px;
+            }
+            
+            .policy-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">DeepSquad</a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="index.html">Main</a>
+                    <a class="nav__link" href="index.html">Durak Game</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="policy-hero animate__animated animate__fadeIn">
+        <div class="container">
+            <div>
+                <h1 class="policy-hero__title animate__animated animate__fadeInUp">Privacy Policy</h1>
+                <p class="policy-hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Durak Mobile</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Policy Content -->
+    <div class="policy-section">
+        <div class="policy-container animate__animated animate__fadeIn">
+            <h2 class="policy-title">Durak Mobile Privacy Policy</h2>
+            
+            <!-- 1. Application intro -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <p class="policy-item__text">
+                    This privacy policy is applicable to the Durak Mobile app (hereinafter referred to as "Application") for mobile devices, which was developed by DeepSquad (hereinafter referred to as "Service Provider") as an Ad Supported service. This service is provided "AS IS".
+                </p>
+            </div>
+            
+            <!-- Information collection & usage -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">What information does the Application obtain and how is it used?</h3>
+                <p class="policy-item__text">
+                    The Application acquires the information you supply when you download and register the Application. Registration with the Service Provider is not mandatory. However, bear in mind that you might not be able to utilize some of the features offered by the Application unless you register with them.
+                </p>
+                <p class="policy-item__text">
+                    The Service Provider may also use the information you provided them to contact you from time to time to provide you with important information, required notices and marketing promotions.
+                </p>
+            </div>
+            
+            <!-- Automatically Collected Information -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">What information does the Application collect automatically?</h3>
+                <p class="policy-item__text">
+                    In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.
+                </p>
+            </div>
+            
+            <!-- Precise location -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">Does the Application collect precise real time location information of the device?</h3>
+                <p class="policy-item__text">
+                    This Application does not gather precise information about the location of your mobile device.
+                </p>
+            </div>
+            
+            <!-- AI Technologies -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Does the Application use Artificial Intelligence (AI) technologies?</h3>
+                <p class="policy-item__text">
+                    The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.
+                </p>
+            </div>
+            
+            <!-- Third party access & services -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">Do third parties see and/or have access to information obtained by the Application?</h3>
+                <p class="policy-item__text">
+                    Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.
+                </p>
+                <p class="policy-item__text">
+                    Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:
+                </p>
+                <ul class="policy-list">
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+                    <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+                    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+                    <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+                    <li><a href="https://www.appodeal.com/home/privacy-policy/" target="_blank" rel="noopener noreferrer">Appodeal</a></li>
+                    <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li>
+                    <li><a href="https://www.applovin.com/privacy/" target="_blank" rel="noopener noreferrer">AppLovin</a></li>
+                </ul>
+            </div>
+            
+            <!-- Data Disclosure (legal / trusted providers) -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">Information Disclosure</h3>
+                <p class="policy-item__text">The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+                <ul class="policy-list">
+                    <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+                    <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
+                    <li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+                </ul>
+            </div>
+            
+            <!-- Opt-out rights -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">What are my opt-out rights?</h3>
+                <p class="policy-item__text">
+                    You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.
+                </p>
+            </div>
+            
+            <!-- Data retention & management -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">What is the data retention policy and how can you manage your information?</h3>
+                <p class="policy-item__text">
+                    The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. The Service Provider will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a> and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.
+                </p>
+            </div>
+            
+            <!-- Children's privacy -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">How does the Application address children's privacy?</h3>
+                <p class="policy-item__text">
+                    The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.
+                </p>
+                <p class="policy-item__text">
+                    The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (<a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>) so that they will be able to take the necessary actions.
+                </p>
+            </div>
+            
+            <!-- Security -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">How is your information kept secure?</h3>
+                <p class="policy-item__text">
+                    The Service Provider are concerned about safeguarding the confidentiality of your information. The Service Provider provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve their Application. Please be aware that, although we endeavor provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.
+                </p>
+            </div>
+            
+            <!-- Policy changes -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-3">
+                <h3 class="policy-item__title">How will you be informed of changes to this Privacy Policy?</h3>
+                <p class="policy-item__text">
+                    This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
+                </p>
+            </div>
+            
+            <!-- Effective date -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <p class="policy-item__text" style="font-style: italic; margin-bottom: 0;">
+                    This privacy policy is effective as of 2026-05-16.
+                </p>
+            </div>
+            
+            <!-- Consent -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-1">
+                <h3 class="policy-item__title">How do you give your consent?</h3>
+                <p class="policy-item__text">
+                    By using the Application, you are giving your consent to the Service Provider processing of your information as set forth in this Privacy Policy now and as amended by us. "Processing,” means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information.
+                </p>
+            </div>
+            
+            <!-- Contact us -->
+            <div class="policy-item animate__animated animate__fadeIn animate-delay-2">
+                <h3 class="policy-item__title">How can you contact us?</h3>
+                <p class="policy-item__text">
+                    If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- Generator attribution (as in original content) -->
+            <div class="credit-note">
+                <p>This privacy policy page was generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
+            </div>
+            
+            <a href="index.html" class="back-btn">← Back to Homepage</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2025 DeepSquad - All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll (re-trigger visible animations)
+        const animateElements = document.querySelectorAll('.animate__animated');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    if (animationClass && !element.classList.contains('animation-triggered')) {
+                        element.classList.add(animationClass);
+                        element.classList.add('animation-triggered');
+                    }
+                }
+            });
+        };
+        
+        // Force init
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            // Preload initial animations
+            document.querySelectorAll('.animate__animated').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    const cls = el.classList[1];
+                    if (cls) el.classList.add(cls);
+                    el.classList.add('animation-triggered');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
