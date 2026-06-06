@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | DeepSquad</title>
+    <link rel="shortcut icon" href="Images/logotype.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="cookie-banner.js" defer></script>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --light: #F5F6FA;
+            --dark: #2D3436;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .error-container {
+            max-width: 600px;
+            padding: 40px;
+        }
+        
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        
+        .error-title {
+            font-size: 52px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .error-text {
+            padding: 40px;
+            font-size: 19px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+        .country{
+            padding-left: 32px;
+            padding-right: 32px;
+            height: 180px;
+            transition: all 0.3s ease;
+        }
+        .country:hover{
+            height: 190px;
+            transform: translateY(-3px);
+        }
+        
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .countries-container{
+            padding-top: 30px;
+            transition: all 0.3s ease;
+            max-width: 600px;
+            align-items: center;
+            justify-content: center;
+            
+            
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .error-code {
+                font-size: 60px;
+            }
+            
+            .error-title {
+                font-size: 24px;
+            }
+            
+            .error-text {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                
+            }
+        }
+    </style>
+</head>
+    
+
+<body>
+    <div class="error-container animate__animated animate__fadeIn">
+        <h1 class="error-title">Preferred Language</h1>
+        <div class="countries-container">
+           <a href="https://forms.gle/8zDGqLbnEE9DdTPb7"><img class="country" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt=""></a>
+           <a href="https://forms.gle/bWH4mod1XSFpjyTy9"><img class="country" src="https://cdn-icons-png.flaticon.com/512/4628/4628645.png" alt=""></a>
+        </div>
+        <h2 class="error-text">You will be redirected to the testing page according to the language you selected</h2>
+        
+    </div>
+</body>
+
+</html>
