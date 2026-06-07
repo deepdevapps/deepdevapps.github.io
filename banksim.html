@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bank Simulator | DeepSquad – Build Your Financial Empire</title>
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236C5CE7'/%3E%3Ctext x='50' y='67' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3E₿%3C/text%3E%3C/svg%3E">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+            --gold: #F9CA24;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section (Bank Themed) */
+        .game-hero {
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e2a3a 0%, #0f2027 100%);
+            color: white;
+            padding-top: 80px;
+            text-align: center;
+        }
+        
+        .game-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 40%, rgba(108,92,231,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+        
+        .game-hero__content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .game-hero__title {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #FFFFFF, #F9CA24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .game-hero__subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: white;
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background-color: var(--light);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(45deg, #F9CA24, #F39C12);
+            color: #2D3436;
+            box-shadow: 0 8px 20px rgba(249,202,36,0.3);
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(45deg, #F1C40F, #E67E22);
+            color: #1e2a3a;
+        }
+        
+        /* About Section */
+        .game-section {
+            padding: 100px 0;
+        }
+        
+        .game-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section__title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section__title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 2px;
+        }
+        
+        .game-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            color: var(--gray);
+            text-align: center;
+        }
+        
+        /* Feature Cards Grid (6 items) */
+        .game-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: calc(33.333% - 20px);
+            min-width: 280px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(108,92,231,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 40px rgba(108,92,231,0.15);
+            border-color: rgba(108,92,231,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-text {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        /* Vertical Screenshot Grid */
+        .screenshots {
+            padding: 80px 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+            justify-items: center;
+        }
+        
+        .screenshot {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            background: #fff;
+            max-width: 260px;
+            width: 100%;
+            transform: scale(1);
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03) translateY(-8px);
+            box-shadow: 0 30px 45px rgba(108,92,231,0.2);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            border-radius: 28px;
+        }
+        
+        /* Beta Testing Section (replaces download block) */
+        .beta-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2632 100%);
+            padding: 90px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .beta-section::before {
+            content: "💰";
+            font-size: 220px;
+            opacity: 0.03;
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            pointer-events: none;
+        }
+        
+        .beta-container {
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .beta-container .section__title {
+            color: white;
+        }
+        
+        .beta-container .section__title:after {
+            background: linear-gradient(90deg, var(--gold), #FFB347);
+        }
+        
+        .beta-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin: 25px 0 35px;
+        }
+        
+        .beta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gold);
+            color: #1e2a3a;
+            padding: 16px 38px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 60px;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
+        
+        .beta-btn:hover {
+            background: #FFB347;
+            transform: scale(1.05);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+        }
+        
+        .back-to-main {
+            display: inline-block;
+            margin-top: 45px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 24px;
+            border-radius: 40px;
+        }
+        
+        .back-to-main:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        /* Bullet list highlight */
+        .feature-list {
+            background: white;
+            border-radius: 28px;
+            padding: 30px 35px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-list h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature-list ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+            gap: 12px;
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-list li:before {
+            content: "🏦";
+            font-size: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 35px 0;
+            text-align: center;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before { top: -8px; }
+        .hamburger:after { top: 8px; }
+        
+        .menu-toggle.active .hamburger { background-color: transparent; }
+        .menu-toggle.active .hamburger:before { transform: rotate(45deg); top: 0; }
+        .menu-toggle.active .hamburger:after { transform: rotate(-45deg); top: 0; }
+        
+        @media (max-width: 992px) {
+            .game-hero__title { font-size: 56px; }
+            .feature-card { width: calc(50% - 15px); }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            .nav.active { right: 0; }
+            .menu-toggle { display: block; }
+            .game-hero__title { font-size: 42px; }
+            .game-hero__subtitle { font-size: 20px; }
+            .section__title { font-size: 32px; }
+            .feature-card { width: 100%; }
+            .screenshot-grid { gap: 20px; }
+        }
+        
+        @media (max-width: 576px) {
+            .game-hero { height: 65vh; min-height: 460px; }
+            .game-hero__title { font-size: 34px; }
+            .btn { padding: 12px 24px; }
+        }
+        
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">DeepSquad</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="index.html">Main</a>
+                    <a class="nav__link" href="https://deepdevapps.github.io/banksimprivacy.html" target="_blank">Privacy Policy</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="game-hero">
+        <div class="container">
+            <div class="game-hero__content animate__animated animate__fadeIn">
+                <h1 class="game-hero__title animate__animated animate__fadeInUp">Bank Simulator</h1>
+                <p class="game-hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Economic Empire · Strategy · Banking Tycoon</p>
+                <a href="https://u.to/RZiWIg" target="_blank" class="btn btn-gold animate__animated animate__fadeInUp animate-delay-2">🏦 Join Beta Testing →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Game Section -->
+    <section class="game-section" id="about">
+        <div class="container">
+            <div class="game-section__header animate__animated animate__fadeIn">
+                <h2 class="section__title">Build Your Financial Empire</h2>
+                <p class="game-description animate__animated animate__fadeIn animate-delay-1">
+                    Start from a modest office and grow into a dominant banking group. Bank Simulator is an immersive economic management game where every decision — from interest rates to marketing campaigns — defines your success. Hire staff, open branches, upgrade headquarters, and become the undisputed leader of the financial world.
+                </p>
+            </div>
+            
+            <div class="game-features">
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">👔</div>
+                    <h3 class="feature-title">Hire & Develop Employees</h3>
+                    <p class="feature-text">Recruit talented bankers, analysts, and managers. Train your team, unlock specializations, and boost efficiency.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp animate-delay-1">
+                    <div class="feature-icon">🏛️</div>
+                    <h3 class="feature-title">Expand Offices & Upgrade HQ</h3>
+                    <p class="feature-text">Open new branches across different districts, upgrade main headquarters with modern infrastructure and prestige.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp animate-delay-2">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Set Loan & Deposit Rates</h3>
+                    <p class="feature-text">Define competitive interest rates, balance risk and profit, attract borrowers and depositors with smart financial policy.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Research Technologies</h3>
+                    <p class="feature-text">Unlock digital banking, AI risk assessment, blockchain integration and stay ahead of competitors.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp animate-delay-1">
+                    <div class="feature-icon">📢</div>
+                    <h3 class="feature-title">Advertising Campaigns</h3>
+                    <p class="feature-text">Launch marketing strategies, attract new client segments, boost your bank's reputation and grow deposits.</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp animate-delay-2">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Financial Empire Growth</h3>
+                    <p class="feature-text">From small office to multinational banking network — dominate the economy, manage assets and shape the market.</p>
+                </div>
+            </div>
+            
+            <div class="feature-list animate__animated animate__fadeInUp">
+                <h3>🔑 In Bank Simulator you will:</h3>
+                <ul>
+                    <li>Hire and develop staff with unique skills</li>
+                    <li>Open new offices in promising areas</li>
+                    <li>Upgrade HQ and unlock modern facilities</li>
+                    <li>Research game-changing banking technologies</li>
+                    <li>Set loan & deposit interest rates strategically</li>
+                    <li>Run advertising to attract masses of clients</li>
+                    <li>Grow from a small branch into a major financial network</li>
+                </ul>
+                <p style="margin-top: 20px; font-style: italic; color: var(--primary);">⚡ Every choice matters — can you build the most successful bank and keep it on top?</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vertical Screenshots Section -->
+    <section class="screenshots">
+        <div class="container">
+            <div class="game-section__header animate__animated animate__fadeIn">
+                <h2 class="section__title">Vertical Previews</h2>
+                <p class="game-description">Experience the authentic banking atmosphere — manage, expand and strategize.</p>
+            </div>
+            <div class="screenshot-grid">
+                <div class="screenshot animate__animated animate__fadeIn">
+                    <img src="Images/bank-screenshot1.png" alt="Bank Simulator - Office Management">
+                </div>
+                <div class="screenshot animate__animated animate__fadeIn animate-delay-2">
+                    <img src="Images/bank-screenshot3.png" alt="Bank Simulator - Main Menu">
+                </div>
+                <div class="screenshot animate__animated animate__fadeIn animate-delay-3">
+                    <img src="Images/bank-screenshot2.png" alt="Bank Simulator - Branch Map">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- BETA TESTING SECTION (replaces download block) -->
+    <section class="beta-section" id="beta">
+        <div class="container">
+            <div class="beta-container animate__animated animate__fadeInUp">
+                <h2 class="section__title">Early Access Beta</h2>
+                <p class="beta-description">
+                    Be among the first to shape Bank Simulator. Join the closed beta program, test cutting-edge features, and help us refine the ultimate banking management experience.
+                </p>
+                <a href="https://u.to/RZiWIg" target="_blank" class="beta-btn">
+                    ✨ Participate in Testing ✨
+                </a>
+                <div>
+                    <a href="index.html" class="back-to-main">← Back to Main Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2025 DeepSquad — All Rights Reserved. Bank Simulator is a trademark of DeepSquad.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        if(menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+        
+        // Close nav on link click
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(menuToggle) menuToggle.classList.remove('active');
+                if(nav) nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll for anchor links (if any)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll observer
+        const animatedElements = document.querySelectorAll('.animate__animated');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const animationClass = Array.from(el.classList).find(cls => cls.startsWith('animate__fade') || cls.startsWith('animate__slide') || cls.startsWith('animate__zoom'));
+                    if (animationClass && !el.classList.contains('animated-triggered')) {
+                        el.classList.add(animationClass);
+                        el.classList.add('animated-triggered');
+                    } else if (!animationClass && !el.classList.contains('animated-triggered')) {
+                        el.classList.add('animate__fadeIn');
+                        el.classList.add('animated-triggered');
+                    }
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.15 });
+        
+        animatedElements.forEach(el => observer.observe(el));
+        
+        // Fallback trigger for already visible elements
+        window.addEventListener('load', () => {
+            animatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    const animationClass = Array.from(el.classList).find(cls => cls.startsWith('animate__fade') || cls.startsWith('animate__slide'));
+                    if (animationClass) el.classList.add(animationClass);
+                    else el.classList.add('animate__fadeIn');
+                    el.classList.add('animated-triggered');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
