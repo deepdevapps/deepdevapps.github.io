@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Политика конфиденциальности Bank Simulator | DeepSquad</title>
+    <link rel="shortcut icon" href="Images/logotype.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .policy-hero {
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-top: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .policy-hero__title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-hero__subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        /* Policy Content */
+        .policy-section {
+            padding: 40px 0;
+        }
+        
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .policy-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .policy-item {
+            margin-bottom: 40px;
+        }
+        
+        .policy-item__title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .policy-item__text {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .policy-list {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        .policy-list li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .policy-list li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .policy-list li a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before {
+            top: -8px;
+        }
+        
+        .hamburger:after {
+            top: 8px;
+        }
+        
+        .menu-toggle.active .hamburger {
+            background-color: transparent;
+        }
+        
+        .menu-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .menu-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        
+        .credit-note {
+            font-size: 13px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .credit-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .credit-note a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .policy-hero__title {
+                font-size: 36px;
+            }
+            
+            .policy-hero__subtitle {
+                font-size: 18px;
+            }
+            
+            .policy-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .policy-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .policy-hero__title {
+                font-size: 30px;
+            }
+            
+            .policy-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">DeepSquad</a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="index.html">Главная</a>
+                    <a class="nav__link" href="#">Bank Simulator</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="policy-hero animate__animated animate__fadeIn">
+        <div class="container">
+            <div>
+                <h1 class="policy-hero__title animate__animated animate__fadeInUp">Политика конфиденциальности</h1>
+                <p class="policy-hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Bank Simulator · DeepSquad</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Policy Content -->
+    <div class="policy-section">
+        <div class="policy-container animate__animated animate__fadeIn">
+            <h2 class="policy-title">Политика конфиденциальности Bank Simulator</h2>
+            
+            <!-- 1. Application intro -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <p class="policy-item__text">
+                    Настоящая политика конфиденциальности применяется к приложению Bank Simulator для мобильных устройств, а также ко всем связанным услугам, предоставляемым компанией DeepSquad (далее — «Приложение»). DeepSquad далее именуется «Поставщик услуг».
+                </p>
+                <p class="policy-item__text">
+                    Данная услуга предоставляется «КАК ЕСТЬ» и поддерживается за счёт рекламы. Используя Приложение, вы соглашаетесь со сбором и использованием информации, как описано в настоящей политике.
+                </p>
+            </div>
+            
+            <!-- Information Collection and Use -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Сбор и использование информации</h3>
+                <p class="policy-item__text">
+                    Приложение собирает информацию при его загрузке и использовании. Эта информация может включать:
+                </p>
+                <ul class="policy-list">
+                    <li>IP-адрес вашего устройства</li>
+                    <li>страницы Приложения, которые вы посещаете, время и дата посещения, время, проведённое на этих страницах</li>
+                    <li>время, проведённое в Приложении</li>
+                    <li>сведения об операционной системе вашего мобильного устройства</li>
+                    <li>идентификаторы устройства и данные о взаимодействии с приложением</li>
+                </ul>
+                <p class="policy-item__text">
+                    Для улучшения вашего опыта использования Приложения Поставщик услуг может запросить у вас определённую личную информацию, включая, но не ограничиваясь: идентификатор пользователя. Запрошенная информация будет храниться и использоваться, как описано в настоящей политике конфиденциальности.
+                </p>
+            </div>
+            
+            <!-- Cookies and tracking technologies -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Файлы cookie и технологии отслеживания</h3>
+                <p class="policy-item__text">
+                    Приложение или его сторонние SDK могут использовать файлы cookie, SDK, пиксели и аналогичные технологии для обеспечения функциональности, аналитики или предоставления услуг. Если это требуется применимым законодательством, Поставщик услуг получит согласие перед использованием необязательных технологий отслеживания.
+                </p>
+            </div>
+            
+            <!-- Your Rights (GDPR & General) -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Ваши права</h3>
+                <p class="policy-item__text">
+                    Вы можете запросить доступ к вашим персональным данным, их исправление или удаление у Поставщика услуг. Чтобы реализовать эти права или отозвать согласие, если обработка основана на согласии, свяжитесь с Поставщиком услуг по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- California Privacy Rights (CCPA/CPRA) -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Ваши права как резидента Калифорнии (CCPA/CPRA)</h3>
+                <p class="policy-item__text">
+                    Если вы являетесь резидентом Калифорнии, вы имеете право знать, какая личная информация собирается, право на удаление личной информации, право отказаться от продажи или передачи личной информации, а также право на недискриминацию при реализации этих прав. Для реализации ваших прав CCPA/CPRA свяжитесь с Поставщиком услуг по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- Marketing communications -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Коммуникация и маркетинг</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг может использовать предоставленную вами информацию для отправки важных уведомлений, обязательной информации и, если разрешено законом, маркетинговых сообщений. Вы можете отказаться от маркетинговых сообщений в любое время, связавшись с нами.
+                </p>
+            </div>
+            
+            <!-- Third Party Access & Services -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Доступ третьих лиц</h3>
+                <p class="policy-item__text">
+                    Только агрегированные и обезличенные данные периодически передаются внешним сервисам, чтобы помочь Поставщику услуг улучшить Приложение и его работу. Поставщик услуг может передавать вашу информацию третьим лицам способами, описанными в настоящем заявлении о конфиденциальности.
+                </p>
+                <p class="policy-item__text">
+                    Обратите внимание, что Приложение использует сторонние сервисы, которые имеют собственную политику конфиденциальности в отношении обработки данных. Ниже приведены ссылки на политику конфиденциальности сторонних поставщиков услуг, используемых Приложением:
+                </p>
+                <ul class="policy-list">
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+                    <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+                    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+                    <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase Crashlytics</a></li>
+                    <li><a href="https://www.appodeal.com/home/privacy-policy/" target="_blank" rel="noopener noreferrer">Appodeal</a></li>
+                    <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li>
+                </ul>
+            </div>
+            
+            <!-- International Data Transfers -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Международная передача данных</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг или его сторонние поставщики услуг могут передавать персональные данные в страны за пределами страны вашего проживания, включая страны за пределами Европейской экономической зоны (ЕЭЗ). Если применимое законодательство требует гарантий для международных передач, Поставщик услуг будет использовать соответствующие механизмы, такие как:
+                </p>
+                <ul class="policy-list">
+                    <li>Стандартные договорные клаузулы (SCC), одобренные Европейской комиссией</li>
+                    <li>Решения об адекватности или другие юридически признанные механизмы передачи</li>
+                    <li>Ваше явное согласие, если это требуется и разрешено законом</li>
+                </ul>
+                <p class="policy-item__text">
+                    Законы о защите данных в других странах могут отличаться от законов вашей юрисдикции. Если это требуется законом, Поставщик услуг применит соответствующие гарантии и получит любое необходимое согласие на передачу.
+                </p>
+            </div>
+            
+            <!-- Information Disclosure (legal / trusted providers) -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Раскрытие информации</h3>
+                <p class="policy-item__text">Поставщик услуг может раскрывать предоставленные пользователем и автоматически собранные данные:</p>
+                <ul class="policy-list">
+                    <li>если это требуется законом, например, во исполнение повестки в суд или аналогичного юридического процесса;</li>
+                    <li>когда они добросовестно полагают, что раскрытие необходимо для защиты их прав, вашей безопасности или безопасности других лиц, расследования мошенничества или ответа на государственный запрос;</li>
+                    <li>доверенным поставщикам услуг, которые работают от их имени, не имеют независимого права использования раскрытой им информации и согласились соблюдать правила, изложенные в настоящем заявлении о конфиденциальности.</li>
+                </ul>
+            </div>
+            
+            <!-- Opt-Out Rights -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Право на отказ от сбора данных</h3>
+                <p class="policy-item__text">
+                    Вы можете прекратить дальнейший сбор информации с вашего мобильного устройства, удалив Приложение. Удаление остановит сбор данных Приложением, но не приведёт к автоматическому удалению информации, которая уже была передана Поставщику услуг или третьим лицам.
+                </p>
+                <p class="policy-item__text">
+                    Чтобы запросить удаление ваших персональных данных, отозвать согласие или реализовать любые ваши права, свяжитесь с Поставщиком услуг по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- Data Retention Policy -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Политика хранения данных</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг хранит персональные данные в зависимости от их необходимости для указанных целей:
+                </p>
+                <ul class="policy-list">
+                    <li><strong>Данные, предоставленные пользователем:</strong> хранятся в течение всего времени использования Приложения плюс 12 месяцев после этого, если более длительное хранение не требуется законом.</li>
+                    <li><strong>Автоматически собранные данные:</strong> хранятся до 24 месяцев с момента сбора, если более длительное хранение не требуется для соблюдения законодательства.</li>
+                    <li><strong>Агрегированные и обезличенные данные:</strong> хранятся бессрочно, так как они больше не идентифицируют вас.</li>
+                    <li><strong>Данные, необходимые для соблюдения законодательства:</strong> хранятся в течение срока, требуемого применимым законодательством.</li>
+                </ul>
+                <p class="policy-item__text">
+                    Вы можете запросить удаление ваших персональных данных, если это не противоречит юридическим обязательствам по их хранению. Если вы хотите, чтобы Поставщик услуг удалил данные, предоставленные пользователем через Приложение, свяжитесь с ним по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>. Обратите внимание, что некоторые данные, предоставленные пользователем, могут быть необходимы для корректной работы Приложения.
+                </p>
+            </div>
+            
+            <!-- Children's Privacy -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Конфиденциальность детей</h3>
+                <p class="policy-item__text">
+                    Приложение не предназначено для детей младше 16 лет или более старшего возраста, если это требуется применимым законодательством. Поставщик услуг сознательно не запрашивает данные у детей и не рекламирует им Приложение.
+                </p>
+                <p class="policy-item__text">
+                    Если по применимому законодательству требуется согласие родителей или опекунов, Приложение не предназначено для использования без такого согласия. Поставщик услуг сознательно не собирает личную информацию от детей младше 16 лет в нарушение применимого законодательства. Если Поставщику услуг станет известно, что ребёнок предоставил личную информацию, он немедленно удалит её со своих серверов. Если вы являетесь родителем или опекуном и вам известно, что ваш ребёнок предоставил нам личную информацию, пожалуйста, свяжитесь с Поставщиком услуг по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>, чтобы они могли предпринять необходимые действия.
+                </p>
+            </div>
+            
+            <!-- Security -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Безопасность</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг заботится о сохранении конфиденциальности вашей информации. Поставщик услуг обеспечивает физические, электронные и процедурные меры защиты для охраны информации, которую он обрабатывает и хранит. Однако имейте в виду, что ни одна система безопасности не может предотвратить все возможные нарушения безопасности.
+                </p>
+            </div>
+            
+            <!-- Data Breach Notification -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Уведомление об утечке данных</h3>
+                <p class="policy-item__text">
+                    Если произойдёт утечка данных, которая затронет ваши персональные данные, Поставщик услуг уведомит вас в соответствии с применимыми правовыми требованиями, включая, если требуется, информацию о характере утечки и предпринимаемых мерах по её устранению.
+                </p>
+            </div>
+            
+            <!-- Changes to this Privacy Policy -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Изменения в настоящей Политике конфиденциальности</h3>
+                <p class="policy-item__text">
+                    Поставщик услуг может время от времени обновлять эту Политику конфиденциальности. Поставщик услуг уведомит вас о существенных изменениях, разместив обновлённую Политику конфиденциальности с указанием даты вступления в силу. Если это требуется законом, Поставщик услуг получит ваше согласие на существенные изменения до того, как они вступят в силу.
+                </p>
+                <p class="policy-item__text">
+                    Предыдущие версии настоящей Политики конфиденциальности будут храниться и предоставляться по запросу при обращении к Поставщику услуг по адресу <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- Effective date -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <p class="policy-item__text" style="font-style: italic; margin-bottom: 0;">
+                    Настоящая политика конфиденциальности действует с 7 июня 2026 года.
+                </p>
+            </div>
+            
+            <!-- Your Consent -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Ваше согласие</h3>
+                <p class="policy-item__text">
+                    Если обработка основана на согласии, вы даёте такое согласие, добровольно соглашаясь на соответствующую функцию или действие. Вы можете отозвать согласие в любое время, и это не повлияет на обработку, выполненную до отзыва. Обработка на других законных основаниях осуществляется, как описано выше. Используя Приложение, вы подтверждаете, что прочитали и поняли настоящую Политику конфиденциальности.
+                </p>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="policy-item animate__animated animate__fadeIn">
+                <h3 class="policy-item__title">Как с нами связаться?</h3>
+                <p class="policy-item__text">
+                    Если у вас есть вопросы о конфиденциальности при использовании Приложения или вопросы о нашей практике, пожалуйста, свяжитесь с Поставщиком услуг по электронной почте: <a href="mailto:f.aiav@yandex.com" style="color: var(--primary);">f.aiav@yandex.com</a>.
+                </p>
+            </div>
+            
+            <!-- Generator attribution -->
+            <div class="credit-note">
+                <p>Эта страница политики конфиденциальности была создана с помощью <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
+            </div>
+            
+            <a href="index.html" class="back-btn">← На главную</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2025 DeepSquad — Все права защищены</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll (re-trigger visible animations)
+        const animateElements = document.querySelectorAll('.animate__animated');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    if (animationClass && !element.classList.contains('animation-triggered')) {
+                        element.classList.add(animationClass);
+                        element.classList.add('animation-triggered');
+                    }
+                }
+            });
+        };
+        
+        // Force init
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            // Preload initial animations
+            document.querySelectorAll('.animate__animated').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    const cls = el.classList[1];
+                    if (cls) el.classList.add(cls);
+                    el.classList.add('animation-triggered');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
