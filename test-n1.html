@@ -11,6 +11,11 @@
 
       gtag('config', 'G-RX3R5VXH2S');
     </script>
+
+    <!-- AUTOMATIC REDIRECT META FALLBACK (2 Seconds) -->
+    <!-- Replace "https://yourdomain.com/target-page" with your target URL -->
+    <meta http-equiv="refresh" content="2;url=https://yourdomain.com/target-page">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | DeepSquad</title>
     <link rel="shortcut icon" href="Images/logotype.png" />
@@ -43,48 +48,44 @@
             text-align: center;
         }
         
-        .error-container {
+        .redirect-container {
             max-width: 600px;
             padding: 40px;
         }
         
-        .error-code {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 120px;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-        
-        .error-title {
-            font-size: 52px;
+        .redirect-title {
+            font-size: 36px;
+            font-weight: 700;
             color: var(--dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        .error-text {
-            padding: 40px;
-            font-size: 19px;
-            margin-bottom: 30px;
+        .redirect-text {
+            font-size: 18px;
             color: var(--dark);
             opacity: 0.8;
+            margin-bottom: 25px;
         }
-        .country{
-            padding-left: 32px;
-            padding-right: 32px;
-            height: 180px;
-            transition: all 0.3s ease;
+
+        /* Smooth CSS Loading Spinner */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(108, 92, 231, 0.2);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 25px auto;
+            animation: spin 1s linear infinite;
         }
-        .country:hover{
-            height: 190px;
-            transform: translateY(-3px);
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        
-        
+
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 30px;
             background-color: var(--primary);
             color: white;
             border-radius: 50px;
@@ -99,58 +100,41 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-        .countries-container{
-            padding-top: 30px;
-            transition: all 0.3s ease;
-            max-width: 600px;
-            align-items: center;
-            justify-content: center;
-            
-            
-        }
-        
-        @media (max-width: 768px) {
-            .error-code {
-                font-size: 80px;
-            }
-            
-            .error-title {
-                font-size: 72px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .error-code {
-                font-size: 60px;
-            }
-            
-            .error-title {
-                font-size: 24px;
-            }
-            
-            .error-text {
-                font-size: 16px;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                
-            }
-        }
     </style>
 </head>
-    
 
 <body>
-    <div class="error-container animate__animated animate__fadeIn">
-        <h1 class="error-title">Preferred Language</h1>
-        <div class="countries-container">
-           <a href="https://forms.gle/8zDGqLbnEE9DdTPb7"><img class="country" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt=""></a>
-           <a href="https://forms.gle/bWH4mod1XSFpjyTy9"><img class="country" src="https://cdn-icons-png.flaticon.com/512/4628/4628645.png" alt=""></a>
-        </div>
-        <h2 class="error-text">You will be redirected to the testing page according to the language you selected</h2>
-        
+    <div class="redirect-container animate__animated animate__fadeIn">
+        <div class="spinner"></div>
+        <h1 class="redirect-title">Please Wait...</h1>
+        <p class="redirect-text">
+            Redirecting you automatically in <strong id="countdown">2</strong> seconds.
+        </p>
+        <!-- Manual Link in case Javascript or Meta Refresh is disabled -->
+        <a id="redirect-link" href="https://yourdomain.com/target-page" class="btn">Click here if not redirected</a>
     </div>
-</body>
 
+    <script>
+        // Set your target URL here
+        const TARGET_URL = "https://play.google.com/store/apps/details?id=com.DeepSquad.BankSimulator";
+        let secondsLeft = 2;
+
+        const countdownElement = document.getElementById('countdown');
+        const redirectLink = document.getElementById('redirect-link');
+
+        // Ensure link is up to date
+        redirectLink.href = TARGET_URL;
+
+        // Countdown timer interval
+        const timer = setInterval(() => {
+            secondsLeft--;
+            countdownElement.textContent = secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = TARGET_URL;
+            }
+        }, 1000);
+    </script>
+</body>
 </html>
