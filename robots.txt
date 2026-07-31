@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow service, error and archived draft pages
+Disallow: /404.html
+Disallow: /403.html
+Disallow: /ru/404.html
+Disallow: /ru/403.html
+Disallow: /test-n1.html
+Disallow: /SirDictator.html
+Disallow: /SirDictatorLore.html
+Disallow: /pavlik0804channel@gmail.com.html
+
+# Sitemap Location
+Sitemap: https://deepdevapps.github.io/sitemap.xml

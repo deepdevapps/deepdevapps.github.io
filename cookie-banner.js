@@ -3,18 +3,20 @@
 // 1. Function to initialize Google Analytics
 // This function will only be called after the user gives consent.
 function initGoogleAnalytics() {
+    if (window.gtagInitialized) return;
+    window.gtagInitialized = true;
     console.log("Cookie consent granted. Initializing Google Analytics...");
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y005JT3FBH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RX3R5VXH2S';
+    document.head.appendChild(script);
 
-  gtag('config', 'G-Y005JT3FBH');
-</script>
-
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-RX3R5VXH2S');
 }
 
 // Run the main code after the page has fully loaded

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://deepdevapps.github.io/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/devSim</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/devSim"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/devSim"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/devSim</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/devSim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/devSim"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/banksim</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/banksim"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/banksim"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/banksim</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/banksim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/banksim"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/privacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/privacy"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/privacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://deepdevapps.github.io/ru/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepdevapps.github.io/privacy"/>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/banksimprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/banksimprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/devsimprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/devsimprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/durakprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://deepdevapps.github.io/ru/durakprivacy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX3R5VXH2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RX3R5VXH2S');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | DeepSquad</title>
+    <meta name="description" content="Privacy Policy for DeepSquad website and mobile games. Information about cookies, Google Analytics, and data collection practices.">
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepdevapps.github.io/privacy.html">
+    <meta property="og:title" content="Privacy Policy | DeepSquad">
+    <meta property="og:description" content="Learn about our privacy practices, cookies usage, Google Analytics integration, and app privacy policies.">
+    <meta property="og:image" content="https://deepdevapps.github.io/Images/logotype.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#6C5CE7">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="Images/logotype.png">
+    <link rel="canonical" href="https://deepdevapps.github.io/privacy">
     <link rel="shortcut icon" href="Images/logotype.png" />
     
     <!-- Fonts -->
@@ -11,8 +32,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     
-    <!-- Animate.css -->
+    <!-- GSAP & Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="animations.js" defer></script>
+    <script src="cookie-banner.js" defer></script>
     
     <style>
         :root {
@@ -92,6 +117,7 @@
         .nav {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
         
         .nav__link {
@@ -121,11 +147,36 @@
         .nav__link:hover:after {
             width: 100%;
         }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+        
+        .lang-btn {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: transparent;
+            color: var(--dark);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
         
         /* Hero Section */
         .privacy-hero {
-            height: 40vh;
-            min-height: 300px;
+            height: 35vh;
+            min-height: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,32 +184,32 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding-top: 80px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         
         .privacy-hero__title {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-family: 'Montserrat', sans-serif;
         }
         
         /* Privacy Content */
         .privacy-section {
-            padding: 40px 0;
+            padding: 20px 0 60px;
         }
         
         .privacy-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 45px;
+            border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
         .privacy-title {
-            font-size: 32px;
+            font-size: 30px;
             margin-bottom: 30px;
             color: var(--primary);
             font-family: 'Montserrat', sans-serif;
@@ -169,14 +220,55 @@
         }
         
         .privacy-item__title {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: var(--dark);
         }
         
         .privacy-item__text {
             color: var(--gray);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .privacy-item__text a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .privacy-item__text a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-list {
+            margin-left: 24px;
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .privacy-list li {
             margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .privacy-list li a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .privacy-list li a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #F0EDFF;
+            color: var(--primary-dark);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
         }
         
         /* Footer */
@@ -253,7 +345,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 30px;
+                gap: 25px;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
             }
@@ -267,26 +359,30 @@
             }
             
             .privacy-hero__title {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .privacy-container {
                 padding: 30px 20px;
             }
+
+            .language-switcher {
+                margin-left: 0;
+            }
         }
         
         @media (max-width: 576px) {
             .privacy-hero {
-                height: 35vh;
-                min-height: 250px;
+                height: 30vh;
+                min-height: 220px;
             }
             
             .privacy-hero__title {
-                font-size: 30px;
+                font-size: 26px;
             }
             
             .privacy-title {
-                font-size: 28px;
+                font-size: 24px;
             }
         }
     </style>
@@ -303,8 +399,14 @@
                 </div>
                 
                 <nav class="nav" id="nav">
-                    <a class="nav__link" href="index.html">Main</a>
-                    <a class="nav__link" href="privacy.html">Privacy Policy</a>
+                    <a class="nav__link" href="./">Home</a>
+                    <a class="nav__link" href="./#games">Games</a>
+                    <a class="nav__link" href="./#contacts">Contact</a>
+                    <a class="nav__link" href="privacy">Privacy Policy</a>
+                    <div class="language-switcher">
+                        <a href="privacy" class="lang-btn active">EN</a>
+                        <a href="ru/privacy" class="lang-btn">RU</a>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -314,35 +416,82 @@
     <section class="privacy-hero animate__animated animate__fadeIn">
         <div class="container">
             <h1 class="privacy-hero__title animate__animated animate__fadeInUp">Privacy Policy</h1>
+            <p style="opacity: 0.9; font-size: 16px;">Effective Date: February 2026</p>
         </div>
     </section>
     
     <!-- Privacy Content -->
     <div class="privacy-section">
         <div class="privacy-container animate__animated animate__fadeIn">
-            <h2 class="privacy-title">Website Privacy Policy</h2>
+            <h2 class="privacy-title">Website & Services Privacy Policy</h2>
             
             <div class="privacy-item animate__animated animate__fadeIn">
-                <h3 class="privacy-item__title">1. Processing of Personal Data</h3>
+                <h3 class="privacy-item__title">1. Introduction</h3>
                 <p class="privacy-item__text">
-                    Our website does not collect, transmit or process any personal data from users. We are also not 
-                    responsible for the collection of data on other services with links to which are present on the site.
+                    This Privacy Policy applies to the official website of DeepSquad (<a href="https://deepdevapps.github.io">deepdevapps.github.io</a>) and our related mobile applications. DeepSquad ("we", "us", or "our") is an indie game development studio based in Russia. We respect your privacy and are committed to protecting any information collected through your interaction with our website and services.
                 </p>
             </div>
             
-            <div class="privacy-item animate__animated animate__fadeIn animate-delay-1">
-                <h3 class="privacy-item__title">2. Cookie Files</h3>
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">2. Analytics & Cookie Files</h3>
                 <p class="privacy-item__text">
-                    We do not use Cookies, and are also not responsible for their use on services linked to on the site.
+                    We use cookies and browser storage technologies (such as <code>localStorage</code>) to enhance user experience and analyze website traffic.
+                </p>
+                <ul class="privacy-list">
+                    <li><strong>Google Analytics:</strong> We utilize Google Analytics (measurement ID: <code>G-RX3R5VXH2S</code>) to collect aggregated, anonymized statistics such as page views, visitor demographics, browser types, and referral sources. This helps us optimize website performance and user experience.</li>
+                    <li><strong>Cookie Consent Banner:</strong> The Google Analytics tracking script is loaded <em>only after you grant explicit consent</em> by clicking "Accept" on our Cookie Consent Banner. Your choice is saved in your browser's <code>localStorage</code> under <code>cookie_consent</code>.</li>
+                    <li><strong>Opt-Out & Managing Consent:</strong> You can decline or revoke cookie consent at any time by clearing your browser's site data/cookies or clicking "Decline" on our banner.</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">3. Personal Data Collection</h3>
+                <p class="privacy-item__text">
+                    Our website does not require user account registration, and we do not collect, store, or process sensitive personal identifying data (such as real names, physical addresses, or financial information) on this website. If you contact us via email or social media, your contact details are strictly used to respond to your inquiries.
                 </p>
             </div>
             
-            <div class="privacy-item animate__animated animate__fadeIn animate-delay-2">
-                <h3 class="privacy-item__title">3. Disclaimer</h3>
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">4. Third-Party Services & External Links</h3>
                 <p class="privacy-item__text">
-                    The site deepdevapps.github.io is the only and original site owned by DeepSquad. We are not 
-                    responsible for copies and fakes of our sites.
+                    Our website contains links to external platforms and third-party services. These platforms operate independently under their own privacy practices:
                 </p>
+                <ul class="privacy-list">
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy & Analytics Terms</a></li>
+                    <li><a href="https://play.google.com/store" target="_blank" rel="noopener">Google Play Store Services</a></li>
+                    <li><a href="https://t.me/deepdevapps" target="_blank" rel="noopener">Telegram Channel (@deepdevapps)</a></li>
+                    <li><a href="https://www.youtube.com/@DeepDevApps" target="_blank" rel="noopener">YouTube (@DeepDevApps)</a></li>
+                </ul>
+            </div>
+
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">5. Mobile Applications Privacy Policies</h3>
+                <p class="privacy-item__text">
+                    Each of our mobile games maintains its own dedicated Privacy Policy detailing in-game analytics, advertising IDs, and data retention:
+                </p>
+                <ul class="privacy-list">
+                    <li><a href="devsimprivacy">Developer Simulator Privacy Policy</a></li>
+                    <li><a href="banksimprivacy">Bank Simulator Privacy Policy</a></li>
+                    <li><a href="durakprivacy">Durak Mobile Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">6. Website Authenticity Disclaimer</h3>
+                <p class="privacy-item__text">
+                    The domain <strong>deepdevapps.github.io</strong> is the sole official website owned and operated by DeepSquad. We are not responsible for unofficial clones, mirrors, or fraudulent copies of our website hosted on unauthorized domains.
+                </p>
+            </div>
+
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">7. Contact Us</h3>
+                <p class="privacy-item__text">
+                    If you have any questions or concerns regarding this Privacy Policy or data practices, please contact us via email or Telegram:
+                </p>
+                <ul class="privacy-list">
+                    <li>Email: <a href="mailto:pavlik0804channel@gmail.com">pavlik0804channel@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/deepdevapps" target="_blank" rel="noopener">t.me/deepdevapps</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -350,7 +499,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer__text">© 2025 DeepSquad - All Rights Reserved</p>
+            <p class="footer__text">© 2026 DeepSquad - All Rights Reserved</p>
         </div>
     </footer>
     
@@ -382,24 +531,6 @@
                 header.classList.remove('scrolled');
             }
         });
-        
-        // Animation on scroll
-        const animateElements = document.querySelectorAll('.animate__animated');
-        
-        const animateOnScroll = () => {
-            animateElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    const animationClass = element.classList[1];
-                    element.classList.add(animationClass);
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
