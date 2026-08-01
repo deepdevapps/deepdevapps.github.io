@@ -5026,8 +5026,6 @@ trustedstack.com, TS677PGY3, RESELLER
 
 152media.info, 152M491, RESELLER
 
-google.com, pub-4581074300690974, DIRECT, f08c47fec0942fa0
-
 adyoulike.com, 721f20f70910d379981dc19ec5da709f, RESELLER
 
 axonix.com, 59204, RESELLER
