@@ -1448,27 +1448,20 @@
         };
 
         async function checkGooglePlayLiveVersion(gameId) {
-          const pkg = GOOGLE_PLAY_PACKAGES[gameId];
-          if (!pkg) return;
-
           try {
-            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://play.google.com/store/apps/details?id=' + pkg + '&hl=en')}`;
-            const response = await fetch(proxyUrl);
+            const response = await fetch(`${VERCEL_BACKEND_URL}/google-play?game=${gameId}`);
             if (response.ok) {
               const data = await response.json();
-              const html = data.contents || '';
-              const versionMatch = html.match(/\[\[\["([0-9]+\.[0-9]+\.[0-9]+[^"]*)"\]\]/);
-              if (versionMatch && versionMatch[1]) {
-                const liveVer = 'v' + versionMatch[1];
+              if (data && data.version) {
                 const verBadge = document.getElementById('heroGameVersion');
                 if (verBadge && currentGameId === gameId) {
-                  verBadge.textContent = liveVer;
+                  verBadge.textContent = data.version;
                   verBadge.title = 'Live version from Google Play';
                 }
               }
             }
           } catch (err) {
-            // Silently fall back
+            // Silently fall back to default version
           }
         }
 
@@ -1694,7 +1687,17 @@
 
         function openRecaptchaModal() {
             document.getElementById('recaptchaModal').classList.add('active');
-            if (window.grecaptcha) grecaptcha.reset();
+            try {
+                if (window.grecaptcha) {
+                    if (window.grecaptcha.enterprise && typeof window.grecaptcha.enterprise.reset === 'function') {
+                        window.grecaptcha.enterprise.reset();
+                    } else if (typeof window.grecaptcha.reset === 'function') {
+                        window.grecaptcha.reset();
+                    }
+                }
+            } catch (e) {
+                // Ignore reset error if widget not ready
+            }
         }
 
         function closeRecaptchaModal() {
