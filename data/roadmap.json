@@ -1,0 +1,145 @@
+{
+  "devsim": {
+    "gameId": "devsim",
+    "gameTitle": "Developer Simulator",
+    "gameTitleRu": "Симулятор разработчика",
+    "tagline": "Build your ultimate tech empire from scratch",
+    "taglineRu": "Создайте свою технологическую империю с нуля",
+    "icon": "Images/game1photo.png",
+    "currentVersion": "v1.0.0",
+    "emptyMessage": "Скоро тут появится информация",
+    "emptyMessageEn": "Information coming soon",
+    "stats": {
+      "releasedCount": 0,
+      "inProgressCount": 0,
+      "plannedCount": 0,
+      "totalVotes": 0
+    },
+    "milestones": [],
+    "items": []
+  },
+  "banksim": {
+    "gameId": "banksim",
+    "gameTitle": "Bank Simulator",
+    "gameTitleRu": "Симулятор банкира",
+    "tagline": "Build your financial empire from the ground up",
+    "taglineRu": "Постройте финансовую империю с самого основания",
+    "icon": "Images/bank.png",
+    "currentVersion": "v1.2.5",
+    "stats": {
+      "releasedCount": 0,
+      "inProgressCount": 2,
+      "plannedCount": 3,
+      "totalVotes": 0
+    },
+    "milestones": [
+      {
+        "version": "v1.3.0",
+        "title": "Emergency Events & VIP Contracts",
+        "titleRu": "Кризис-менеджмент и VIP-Контракты",
+        "targetDate": "Q3 2026",
+        "status": "in-progress",
+        "progress": 68,
+        "summary": "Introduction of interactive emergency events, crisis management decisions, and billionaire VIP client negotiations.",
+        "summaryRu": "Внедрение экстренных событий, выбор вариантов в кризисных ситуациях и переговоры с редкими VIP-клиентами."
+      },
+      {
+        "version": "v1.4.0",
+        "title": "Stock Market, Collector Fleet & Daily Quests",
+        "titleRu": "Инвестиции, Инкассация и Ежедневные задания",
+        "targetDate": "Q4 2026",
+        "status": "planned",
+        "progress": 20,
+        "summary": "In-app crypto & stock market trading, armored collector transport routes, and Bank Pass daily quests.",
+        "summaryRu": "Торговля акциями и криптовалютой, инкассаторские броневики и система ежедневных заданий Bank Pass."
+      }
+    ],
+    "items": [
+      {
+        "id": "bank-1",
+        "title": "Emergency Events & Crisis Management",
+        "titleRu": "⚡ Случайные события и Кризис-менеджмент (Emergency Events)",
+        "description": "Emergency events appear as interactive pop-up cards with 2–3 decision choices:\n• Robbery Attempt: Call police (50% risk of money loss), Activate trained guards, or Pay off robbers.\n• Bank Run: Raise deposit interest (increases expenses but retains clients) or Request Central Bank bailout.\n• Tax Audit: Pass audit honestly (risk of fine), Hire auditor for cash, or Watch ad for quick resolution.",
+        "descriptionRu": "Время от времени во время игры возникает экстренное событие в виде всплывающей карточки с 2–3 вариантами выбора:\n\n• Нападение / Ограбление: Вызвать полицию (шанс 50% потерять деньги), Активировать охрану (требует вкачанный штат безопасности) или Откупиться.\n• Наплыв вкладчиков (Bank Run): Поднять процент по вкладам (увеличивает расходы, но сохраняет клиентов) или Запросить помощь ЦБ.\n• Налоговая проверка / Аудит: Пройти аудит честно (риск штрафа), Нанять аудитора за деньги или Посмотреть рекламу для быстрого решения.",
+        "status": "in-progress",
+        "category": "Gameplay",
+        "categoryRu": "Геймплей",
+        "version": "v1.3.0",
+        "targetDate": "Q3 2026",
+        "progress": 75,
+        "votes": 0,
+        "tags": ["Events", "Crisis", "Gameplay"],
+        "developerNotes": "Pop-up card dialog UI & event chance logic in active development.",
+        "developerNotesRu": "Интерфейс всплывающих карточек и логика шансов в активной разработке."
+      },
+      {
+        "id": "bank-2",
+        "title": "VIP Client Contracts & Negotiations",
+        "titleRu": "🎩 VIP-Клиенты и Переговоры (VIP Client Contracts)",
+        "description": "Rare VIP clients (billionaires, celebrities, sports clubs) visit your bank branch:\n• VIP icon appears near entrance.\n• Enter contract negotiations to choose interest rates, loan/deposit terms, and premium service packages.\n• Each VIP has custom reputation requirements and risk tolerance.\n• Success: Huge one-time payout or permanent passive income bonus.",
+        "descriptionRu": "Иногда в банк приходят редкие VIP-клиенты (миллиардеры, известные бизнесмены, спортивные клубы):\n\n• Появляется иконка VIP-клиента у входа.\n• Игрок вступает в диалог/переговоры, где нужно выбрать условия договора (процентная ставка, срок кредита/депозита, пакет премиум-услуг).\n• У каждого VIP есть свой показатель риск-аппетита и требований к репутации банка.\n• Успех: Огромная разовая выплата или постоянный бонус к пассивному доходу.",
+        "status": "in-progress",
+        "category": "Gameplay",
+        "categoryRu": "Геймплей",
+        "version": "v1.3.0",
+        "targetDate": "Q3 2026",
+        "progress": 60,
+        "votes": 0,
+        "tags": ["VIP", "Negotiations", "Contracts"],
+        "developerNotes": "Dialogue tree system and VIP avatars being created.",
+        "developerNotesRu": "Создается система диалогов и аватары редких VIP-персонажей."
+      },
+      {
+        "id": "bank-3",
+        "title": "Stock Market & Crypto Portfolio",
+        "titleRu": "📈 Инвестиционный Портфель и Торговля (Stock Market & Crypto)",
+        "description": "In-app mini stock exchange for investing free bank capital:\n• Assets: Tech stocks, Government bonds, Gold, Cryptocurrency.\n• Prices dynamically change over time based on charts and news feeds.\n• Buy low and sell high using bank reserves for quick speculative profits.",
+        "descriptionRu": "Мини-биржа внутри приложения для вложения свободных средств банка:\n\n• Доступ к покупке активов: Акции технологических компаний, Государственные облигации, Золото, Криптовалюта.\n• Цены динамически меняются со временем (по графикам/новостной ленте).\n• Игрок может покупать дешевле и продавать дороже, используя резервы банка для быстрых спекулятивных заработков.",
+        "status": "planned",
+        "category": "Features",
+        "categoryRu": "Фичи",
+        "version": "v1.4.0",
+        "targetDate": "Q4 2026",
+        "progress": 35,
+        "votes": 0,
+        "tags": ["Trading", "Crypto", "Stock Market"],
+        "developerNotes": "Stock chart rendering engine planned for v1.4.",
+        "developerNotesRu": "Движок рендеринга графиков цен запланирован на v1.4."
+      },
+      {
+        "id": "bank-4",
+        "title": "Armored Collector Fleet & Transport Runs",
+        "titleRu": "🚚 Служба Инкассации и Рейсы (Collector Fleet)",
+        "description": "Active cash transport & collection gameplay:\n• Purchase armored vans and send them on routes (collecting cash from ATMs, shopping malls, and businesses).\n• Transport runs take 1–5 minutes with risk of random attacks (reduced by upgrading van armor and hiring armed guards).\n• Vans return with massive cash rewards.",
+        "descriptionRu": "Геймплейная активность по сбору и перевозке наличных:\n\n• Игрок закупает броневики (инкассаторские машины) и отправляет их в рейсы по городу (сбор выручки из банкоматов, ТЦ и других организаций).\n• Рейс длится 1–5 минут. Есть шанс случайного нападения на рейс (шанс снижается покупкой брони для машин и вооруженной охраны).\n• По возвращении машина приносит крупный куш наличных.",
+        "status": "planned",
+        "category": "Gameplay",
+        "categoryRu": "Геймплей",
+        "version": "v1.4.0",
+        "targetDate": "Q4 2026",
+        "progress": 20,
+        "votes": 0,
+        "tags": ["Transport", "Collector", "Cash"],
+        "developerNotes": "City map routes and vehicle upgrade system in design.",
+        "developerNotesRu": "Проектируются маршруты по карте города и прокачка машин."
+      },
+      {
+        "id": "bank-5",
+        "title": "Daily Quests & Bank Pass",
+        "titleRu": "📜 Ежедневные Задания и Bank Pass (Daily Quests)",
+        "description": "Classic player retention quest system:\n• Example Quests: Issue 5 loans in a day, Repel 1 robbery attempt, Run 2 marketing campaigns, Earn $50,000 on investments.\n• Rewards: Premium currency (gems/gold), income boosts, exclusive bank building skins.",
+        "descriptionRu": "Классическая механика удержания игроков:\n\nПримеры заданий:\n• «Выдать 5 кредитов за день»\n• «Успешно отбить 1 попытку ограбления»\n• «Провести 2 маркетинговые кампании»\n• «Заработать $50,000 на инвестициях»\n\nНаграда: Премиум-валюта (кристаллы/голда), бусты дохода, скины для банка.",
+        "status": "planned",
+        "category": "Features",
+        "categoryRu": "Фичи",
+        "version": "v1.4.0",
+        "targetDate": "Q4 2026",
+        "progress": 10,
+        "votes": 0,
+        "tags": ["Quests", "Bank Pass", "Rewards"],
+        "developerNotes": "Daily quest rotation logic ready.",
+        "developerNotesRu": "Логика ротации ежедневных квестов подготовлена."
+      }
+    ]
+  }
+}

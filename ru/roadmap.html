@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX3R5VXH2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX3R5VXH2S');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожная карта разработки | DeepSquad Studio</title>
+    <meta name="description" content="Дорожная карта разработки игр DeepSquad. Следите за обновлениями, голосуйте за функции и участвуйте в развитии игр!">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepdevapps.github.io/ru/roadmap.html">
+    <meta property="og:title" content="Дорожная карта разработки | Игры DeepSquad">
+    <meta property="og:description" content="Следите за новыми функциями, статусом обновлений и голосуйте за идеи сообщества Симулятора разработчика и Симулятора банкира.">
+    <meta property="og:image" content="https://deepdevapps.github.io/Images/logotype.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#6C5CE7">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="apple-touch-icon" href="../Images/logotype.png">
+    <link rel="canonical" href="https://deepdevapps.github.io/ru/roadmap.html">
+    <link rel="shortcut icon" href="../Images/logotype.png" />
+    
+    <!-- Fonts & Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="../translations.js"></script>
+    <script src="cookie-banner.js" defer></script>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --primary-light: #A29BFE;
+            --secondary: #00CEFF;
+            --secondary-dark: #0099BC;
+            --dark: #2D3436;
+            --dark-surface: #1E232A;
+            --light: #F8F9FD;
+            --white: #FFFFFF;
+            --accent: #FD79A8;
+            --gray: #636E72;
+            --gray-light: #DFE6E9;
+            --gray-subtle: #F1F3F9;
+            --gold: #F9CA24;
+            
+            --status-released: #10B981;
+            --status-released-bg: rgba(16, 185, 129, 0.12);
+            --status-progress: #00CEFF;
+            --status-progress-bg: rgba(0, 206, 255, 0.12);
+            --status-planned: #6C5CE7;
+            --status-planned-bg: rgba(108, 92, 231, 0.12);
+            --status-idea: #FD79A8;
+            --status-idea-bg: rgba(253, 121, 168, 0.12);
+            
+            --card-shadow: 0 10px 30px rgba(108, 92, 231, 0.08);
+            --card-shadow-hover: 0 20px 40px rgba(108, 92, 231, 0.16);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 18px 0;
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        header.scrolled {
+            padding: 14px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .header__logo img {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+        }
+
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.03);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav__link:hover, .nav__link.active {
+            color: var(--primary);
+        }
+
+        .nav__link:hover:after, .nav__link.active:after {
+            width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 6px;
+            margin-left: 10px;
+            background: var(--gray-subtle);
+            padding: 4px;
+            border-radius: 30px;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: none;
+            background: transparent;
+            color: var(--gray);
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger {
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:before, .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:before { top: -8px; }
+        .hamburger:after { top: 8px; }
+
+        .menu-toggle.active .hamburger { background-color: transparent; }
+        .menu-toggle.active .hamburger:before { transform: rotate(45deg); top: 0; }
+        .menu-toggle.active .hamburger:after { transform: rotate(-45deg); top: 0; }
+
+        .roadmap-hero {
+            margin-top: 90px;
+            padding: 45px 0 35px;
+            background: linear-gradient(135deg, #6C5CE7 0%, #4834D4 50%, #00CEFF 100%);
+            color: white;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.25);
+        }
+
+        .game-switcher-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .game-switcher {
+            display: inline-flex;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 6px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            gap: 6px;
+        }
+
+        .game-tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .game-tab img {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .game-tab:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .game-tab.active {
+            background: white;
+            color: var(--primary-dark);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero__details {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .game-badge-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .game-info-box h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .game-version-pill {
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .game-tagline {
+            font-size: 17px;
+            opacity: 0.92;
+            font-weight: 400;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .stat-icon {
+            font-size: 28px;
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-val {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-lbl {
+            font-size: 13px;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+
+        .controls-section {
+            padding: 30px 0 15px;
+        }
+
+        .controls-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .controls-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .status-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 9px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--gray-light);
+            background: var(--white);
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--gray-subtle);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+        }
+
+        .filter-btn .count-badge {
+            background: rgba(0, 0, 0, 0.08);
+            color: currentColor;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .filter-btn.active .count-badge {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .controls-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 240px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border-radius: 30px;
+            border: 1px solid var(--gray-light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: var(--gray-subtle);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        .view-toggle {
+            display: flex;
+            background: var(--gray-subtle);
+            padding: 4px;
+            border-radius: 30px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .view-btn {
+            padding: 8px 14px;
+            border-radius: 20px;
+            border: none;
+            background: transparent;
+            color: var(--gray);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-suggest {
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .btn-suggest:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.45);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .cat-pill {
+            padding: 5px 14px;
+            border-radius: 20px;
+            background: var(--gray-subtle);
+            color: var(--gray);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .cat-pill:hover, .cat-pill.active {
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary-dark);
+            border-color: rgba(108, 92, 231, 0.3);
+            font-weight: 600;
+        }
+
+        .roadmap-content {
+            padding: 20px 0 80px;
+            flex: 1;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .item-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px 0 0 5px;
+        }
+
+        .item-card[data-status="completed"]::before { background: var(--status-released); }
+        .item-card[data-status="in-progress"]::before { background: var(--status-progress); }
+        .item-card[data-status="planned"]::before { background: var(--status-planned); }
+        .item-card[data-status="idea"]::before { background: var(--status-idea); }
+
+        .item-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .item-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.completed { background: var(--status-released-bg); color: var(--status-released); }
+        .status-badge.in-progress { background: var(--status-progress-bg); color: #0099BC; }
+        .status-badge.planned { background: var(--status-planned-bg); color: var(--primary); }
+        .status-badge.idea { background: var(--status-idea-bg); color: #E84393; }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status-badge.in-progress .status-dot {
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        .item-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray);
+            background: var(--gray-subtle);
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+
+        .item-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            white-space: pre-line;
+            flex: 1;
+        }
+
+        .progress-wrapper { margin-bottom: 16px; }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 7px;
+            background: var(--gray-light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 10px;
+        }
+
+        .progress-bar-fill.completed { background: var(--status-released); }
+
+        .item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .tag-chip {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--gray);
+            background: var(--gray-subtle);
+            padding: 3px 9px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .item-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid var(--gray-subtle);
+            margin-top: auto;
+        }
+
+        .item-meta-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .meta-ver { font-size: 13px; font-weight: 700; color: var(--dark); }
+        .meta-date { font-size: 12px; color: var(--gray); }
+
+        .upvote-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid var(--gray-light);
+            background: var(--white);
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .upvote-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(108, 92, 231, 0.05);
+            transform: scale(1.04);
+        }
+
+        .upvote-btn.voted {
+            background: linear-gradient(135deg, var(--accent) 0%, #E84393 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(253, 121, 168, 0.35);
+        }
+
+        .dev-note-box {
+            margin-top: 14px;
+            background: rgba(108, 92, 231, 0.04);
+            border-left: 3px solid var(--primary);
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 12.5px;
+            color: #4A5568;
+        }
+
+        .dev-note-title { font-weight: 700; color: var(--primary-dark); margin-bottom: 2px; }
+
+        .timeline-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 28px;
+            width: 4px;
+            background: var(--gray-light);
+            border-radius: 4px;
+        }
+
+        .timeline-milestone {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: 14px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 6px rgba(108, 92, 231, 0.15);
+            z-index: 2;
+        }
+
+        .milestone-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .milestone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .milestone-version {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .milestone-summary { font-size: 15px; color: var(--gray); margin-bottom: 20px; }
+        .milestone-items-list { display: flex; flex-direction: column; gap: 12px; }
+
+        .no-results {
+            text-align: center;
+            padding: 70px 20px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 52, 54, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .modal-box {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 540px;
+            padding: 32px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: var(--gray-subtle);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .modal-title { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+        .modal-subtitle { font-size: 14px; color: var(--gray); margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background: var(--gray-subtle);
+        }
+
+        textarea.form-control { min-height: 110px; resize: vertical; }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.35);
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dark-surface);
+            color: white;
+            padding: 14px 22px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.35s ease;
+        }
+
+        .toast-notification.show { transform: translateY(0); opacity: 1; }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 35px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px; height: 100vh;
+                background-color: white; flex-direction: column; align-items: center; justify-content: center;
+                gap: 24px; transition: right 0.3s ease; box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            }
+            .nav.active { right: 0; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">
+                    <img src="../Images/logotype.png" alt="DeepSquad Logo">
+                    <span>DeepSquad</span>
+                </a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="index.html" data-i18n="nav_main">Главная</a>
+                    <a class="nav__link" href="devSim.html">Симулятор разработчика</a>
+                    <a class="nav__link" href="banksim.html">Симулятор банкира</a>
+                    <a class="nav__link active" href="roadmap.html" data-i18n="nav_roadmap">Дорожная карта</a>
+                    <a class="nav__link" href="privacy.html" data-i18n="nav_privacy">Конфиденциальность</a>
+                    
+                    <div class="language-switcher">
+                        <a href="../roadmap.html" class="lang-btn">EN</a>
+                        <a href="./roadmap.html" class="lang-btn active">RU</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="roadmap-hero" id="roadmapHero">
+        <div class="container">
+            <div class="game-switcher-wrapper">
+                <div class="game-switcher">
+                    <button class="game-tab active" data-game="devsim" onclick="switchGame('devsim')">
+                        <img src="../Images/game1photo.png" alt="Dev Sim">
+                        <span>Симулятор разработчика</span>
+                    </button>
+                    <button class="game-tab" data-game="banksim" onclick="switchGame('banksim')">
+                        <img src="../Images/bank.png" alt="Bank Sim">
+                        <span>Симулятор банкира</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero__details">
+                <img id="heroGameIcon" class="game-badge-icon" src="../Images/game1photo.png" alt="Game Banner">
+                <div class="game-info-box">
+                    <h1>
+                        <span id="heroGameTitle">Симулятор разработчика</span>
+                        <span id="heroGameVersion" class="game-version-pill">v1.0.0</span>
+                    </h1>
+                    <p id="heroGameTagline" class="game-tagline">Создайте свою технологическую империю с нуля</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #10B981;">✅</div>
+                    <div>
+                        <div id="statReleased" class="stat-val">0</div>
+                        <div class="stat-lbl" data-i18n="roadmap_stat_released">Реализовано</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #00CEFF;">⚙️</div>
+                    <div>
+                        <div id="statInProgress" class="stat-val">0</div>
+                        <div class="stat-lbl" data-i18n="roadmap_stat_in_progress">В разработке</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #6C5CE7;">🚀</div>
+                    <div>
+                        <div id="statPlanned" class="stat-val">0</div>
+                        <div class="stat-lbl" data-i18n="roadmap_stat_planned">Запланировано</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #FD79A8;">🔥</div>
+                    <div>
+                        <div id="statVotes" class="stat-val">0</div>
+                        <div class="stat-lbl" data-i18n="roadmap_stat_votes">Всего голосов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="controls-section">
+        <div class="container">
+            <div class="controls-card">
+                <div class="controls-top">
+                    <div class="status-filters">
+                        <button class="filter-btn active" data-status="all" onclick="setFilterStatus('all')">
+                            <span data-i18n="roadmap_filter_all">Все функции</span>
+                            <span id="countAll" class="count-badge">0</span>
+                        </button>
+                        <button class="filter-btn" data-status="in-progress" onclick="setFilterStatus('in-progress')">
+                            <span class="status-dot" style="background: var(--status-progress);"></span>
+                            <span data-i18n="roadmap_filter_in_progress">В разработке</span>
+                            <span id="countInProgress" class="count-badge">0</span>
+                        </button>
+                        <button class="filter-btn" data-status="planned" onclick="setFilterStatus('planned')">
+                            <span class="status-dot" style="background: var(--status-planned);"></span>
+                            <span data-i18n="roadmap_filter_planned">Запланировано</span>
+                            <span id="countPlanned" class="count-badge">0</span>
+                        </button>
+                        <button class="filter-btn" data-status="completed" onclick="setFilterStatus('completed')">
+                            <span class="status-dot" style="background: var(--status-released);"></span>
+                            <span data-i18n="roadmap_filter_completed">Реализовано</span>
+                            <span id="countCompleted" class="count-badge">0</span>
+                        </button>
+                        <button class="filter-btn" data-status="idea" onclick="setFilterStatus('idea')">
+                            <span class="status-dot" style="background: var(--status-idea);"></span>
+                            <span data-i18n="roadmap_filter_ideas">Идеи сообщества</span>
+                            <span id="countIdea" class="count-badge">0</span>
+                        </button>
+                    </div>
+
+                    <div class="controls-actions">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Поиск по названию..." oninput="onSearchChange(this.value)">
+                        </div>
+
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="viewBtnGrid" onclick="setViewMode('grid')">
+                                <span>🔲</span> <span data-i18n="roadmap_view_grid">Сетка</span>
+                            </button>
+                            <button class="view-btn" id="viewBtnTimeline" onclick="setViewMode('timeline')">
+                                <span>📍</span> <span data-i18n="roadmap_view_timeline">Таймлайн</span>
+                            </button>
+                        </div>
+
+                        <button class="btn-suggest" onclick="openSuggestModal()">
+                            <span data-i18n="roadmap_btn_suggest">+ Предложить фичу</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="category-filters" id="categoryContainer">
+                    <button class="cat-pill active" data-cat="all" onclick="setCategoryFilter('all')">Все категории</button>
+                    <button class="cat-pill" data-cat="Gameplay" onclick="setCategoryFilter('Gameplay')">Геймплей</button>
+                    <button class="cat-pill" data-cat="Graphics & UI" onclick="setCategoryFilter('Graphics & UI')">Графика и UI</button>
+                    <button class="cat-pill" data-cat="Features" onclick="setCategoryFilter('Features')">Фичи</button>
+                    <button class="cat-pill" data-cat="Tech" onclick="setCategoryFilter('Tech')">Производительность</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="roadmap-content">
+        <div class="container">
+            <div id="roadmapViewContainer">
+                <div id="gridContainer" class="cards-grid"></div>
+                <div id="timelineContainer" class="timeline-wrapper" style="display: none;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Google reCAPTCHA Verification Modal -->
+    <div class="modal-overlay" id="recaptchaModal">
+        <div class="modal-box" style="text-align: center; max-width: 420px;">
+            <button class="modal-close-btn" onclick="closeRecaptchaModal()">&times;</button>
+            <h3 class="modal-title" style="font-size: 22px; margin-bottom: 8px;">🤖 Защита от спама</h3>
+            <p style="color: var(--gray); font-size: 14px; margin-bottom: 20px;">Пройдите проверку Google reCAPTCHA, чтобы подтвердить ваш голос!</p>
+            <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                <div class="g-recaptcha" data-sitekey="6LdEH3gtAAAAANP4w2zB4eZ_HSgQD8Mp89fY_WKl" data-callback="onRecaptchaUpvoteSuccess"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="suggestModal">
+        <div class="modal-box">
+            <button class="modal-close-btn" onclick="closeSuggestModal()">&times;</button>
+            <h2 class="modal-title" data-i18n="roadmap_suggest_modal_title">Предложить новую функцию</h2>
+            <p class="modal-subtitle" data-i18n="roadmap_suggest_modal_desc">Есть отличная идея для игры? Поделитесь с нами!</p>
+            
+            <form id="suggestForm" onsubmit="handleSuggestSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" data-i18n="roadmap_suggest_field_title">Название функции</label>
+                    <input type="text" id="suggestTitle" class="form-control" placeholder="Например: Межбанковские переводы" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" data-i18n="roadmap_suggest_field_category">Категория</label>
+                    <select id="suggestCategory" class="form-control">
+                        <option value="Gameplay">Геймплей</option>
+                        <option value="Graphics & UI">Графика и UI</option>
+                        <option value="Features">Фичи и Кастомизация</option>
+                        <option value="Tech">Производительность</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="roadmap_suggest_field_desc">Описание и подробности</label>
+                    <textarea id="suggestDesc" class="form-control" placeholder="Опишите, как должна работать эта функция..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="roadmap_suggest_field_author">Ваше имя / никнейм (необязательно)</label>
+                    <input type="text" id="suggestAuthor" class="form-control" placeholder="Например: Алексей (Gamer123)">
+                </div>
+
+                <button type="submit" class="form-submit-btn" data-i18n="roadmap_suggest_submit">Отправить предложение</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-notification" id="toast">
+        <span id="toastIcon">✨</span>
+        <span id="toastMsg">Сообщение</span>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="footer__text" data-i18n="footer">© 2026 DeepSquad - Все права защищены</p>
+        </div>
+    </footer>
+
+    <script>
+        const VERCEL_BACKEND_URL = 'https://deepdevappsinf.vercel.app/api';
+        const LOCAL_DATA_URL = '../data/roadmap.json';
+
+        let currentLang = 'ru';
+        let currentGameId = 'devsim';
+        let currentStatusFilter = 'all';
+        let currentCategoryFilter = 'all';
+        let currentSearchQuery = '';
+        let currentViewMode = 'grid';
+        let roadmapData = {};
+        let localVotes = JSON.parse(localStorage.getItem('roadmap_votes') || '{}');
+        let pendingUpvoteItemId = null;
+
+        const DEFAULT_ROADMAP_DATA = {
+          "devsim": {
+            "gameId": "devsim",
+            "gameTitle": "Developer Simulator",
+            "gameTitleRu": "Симулятор разработчика",
+            "tagline": "Build your ultimate tech empire from scratch",
+            "taglineRu": "Создайте свою технологическую империю с нуля",
+            "icon": "../Images/game1photo.png",
+            "currentVersion": "v1.0.0",
+            "emptyMessage": "Скоро тут появится информация",
+            "emptyMessageEn": "Information coming soon",
+            "stats": { "releasedCount": 0, "inProgressCount": 0, "plannedCount": 0, "totalVotes": 0 },
+            "milestones": [],
+            "items": []
+          },
+          "banksim": {
+            "gameId": "banksim",
+            "gameTitle": "Bank Simulator",
+            "gameTitleRu": "Симулятор банкира",
+            "tagline": "Build your financial empire from the ground up",
+            "taglineRu": "Постройте финансовую империю с самого основания",
+            "icon": "../Images/bank.png",
+            "currentVersion": "v1.2.5",
+            "stats": { "releasedCount": 0, "inProgressCount": 2, "plannedCount": 3, "totalVotes": 0 },
+            "milestones": [
+              {
+                "version": "v1.3.0",
+                "title": "Emergency Events & VIP Contracts",
+                "titleRu": "Кризис-менеджмент и VIP-Контракты",
+                "targetDate": "Q3 2026",
+                "status": "in-progress",
+                "progress": 68,
+                "summary": "Introduction of interactive emergency events, crisis management decisions, and billionaire VIP client negotiations.",
+                "summaryRu": "Внедрение экстренных событий, выбор вариантов в кризисных ситуациях и переговоры с редкими VIP-клиентами."
+              },
+              {
+                "version": "v1.4.0",
+                "title": "Stock Market, Collector Fleet & Daily Quests",
+                "titleRu": "Инвестиции, Инкассация и Ежедневные задания",
+                "targetDate": "Q4 2026",
+                "status": "planned",
+                "progress": 20,
+                "summary": "In-app crypto & stock market trading, armored collector transport routes, and Bank Pass daily quests.",
+                "summaryRu": "Торговля акциями и криптовалютой, инкассаторские броневики и система ежедневных заданий Bank Pass."
+              }
+            ],
+            "items": [
+              {
+                "id": "bank-1",
+                "title": "Emergency Events & Crisis Management",
+                "titleRu": "⚡ Случайные события и Кризис-менеджмент (Emergency Events)",
+                "description": "Emergency events appear as interactive pop-up cards with 2–3 decision choices:\n• Robbery Attempt: Call police (50% risk of money loss), Activate trained guards, or Pay off robbers.\n• Bank Run: Raise deposit interest (increases expenses but retains clients) or Request Central Bank bailout.\n• Tax Audit: Pass audit honestly (risk of fine), Hire auditor for cash, or Watch ad for quick resolution.",
+                "descriptionRu": "Время от времени во время игры возникает экстренное событие в виде всплывающей карточки с 2–3 вариантами выбора:\n\n• Нападение / Ограбление: Вызвать полицию (шанс 50% потерять деньги), Активировать охрану (требует вкачанный штат безопасности) или Откупиться.\n• Наплыв вкладчиков (Bank Run): Поднять процент по вкладам (увеличивает расходы, но сохраняет клиентов) или Запросить помощь ЦБ.\n• Налоговая проверка / Аудит: Пройти аудит честно (риск штрафа), Нанять аудитора за деньги или Посмотреть рекламу для быстрого решения.",
+                "status": "in-progress",
+                "category": "Gameplay",
+                "categoryRu": "Геймплей",
+                "version": "v1.3.0",
+                "targetDate": "Q3 2026",
+                "progress": 75,
+                "votes": 0,
+                "tags": ["Events", "Crisis", "Gameplay"],
+                "developerNotes": "Pop-up card dialog UI & event chance logic in active development.",
+                "developerNotesRu": "Интерфейс всплывающих карточек и логика шансов в активной разработке."
+              },
+              {
+                "id": "bank-2",
+                "title": "VIP Client Contracts & Negotiations",
+                "titleRu": "🎩 VIP-Клиенты и Переговоры (VIP Client Contracts)",
+                "description": "Rare VIP clients (billionaires, celebrities, sports clubs) visit your bank branch:\n• VIP icon appears near entrance.\n• Enter contract negotiations to choose interest rates, loan/deposit terms, and premium service packages.\n• Each VIP has custom reputation requirements and risk tolerance.\n• Success: Huge one-time payout or permanent passive income bonus.",
+                "descriptionRu": "Иногда в банк приходят редкие VIP-клиенты (миллиардеры, известные бизнесмены, спортивные клубы):\n\n• Появляется иконка VIP-клиента у входа.\n• Игрок вступает в диалог/переговоры, где нужно выбрать условия договора (процентная ставка, срок кредита/депозита, пакет премиум-услуг).\n• У каждого VIP есть свой показатель риск-аппетита и требований к репутации банка.\n• Успех: Огромная разовая выплата или постоянный бонус к пассивному доходу.",
+                "status": "in-progress",
+                "category": "Gameplay",
+                "categoryRu": "Геймплей",
+                "version": "v1.3.0",
+                "targetDate": "Q3 2026",
+                "progress": 60,
+                "votes": 0,
+                "tags": ["VIP", "Negotiations", "Contracts"],
+                "developerNotes": "Dialogue tree system and VIP avatars being created.",
+                "developerNotesRu": "Создается система диалогов и аватары редких VIP-персонажей."
+              },
+              {
+                "id": "bank-3",
+                "title": "Stock Market & Crypto Portfolio",
+                "titleRu": "📈 Инвестиционный Портфель и Торговля (Stock Market & Crypto)",
+                "description": "In-app mini stock exchange for investing free bank capital:\n• Assets: Tech stocks, Government bonds, Gold, Cryptocurrency.\n• Prices dynamically change over time based on charts and news feeds.\n• Buy low and sell high using bank reserves for quick speculative profits.",
+                "descriptionRu": "Мини-биржа внутри приложения для вложения свободных средств банка:\n\n• Доступ к покупке активов: Акции технологических компаний, Государственные облигации, Золото, Криптовалюта.\n• Цены динамически меняются со временем (по графикам/новостной ленте).\n• Игрок может покупать дешевле и продавать дороже, используя резервы банка для быстрых спекулятивных заработков.",
+                "status": "planned",
+                "category": "Features",
+                "categoryRu": "Фичи",
+                "version": "v1.4.0",
+                "targetDate": "Q4 2026",
+                "progress": 35,
+                "votes": 0,
+                "tags": ["Trading", "Crypto", "Stock Market"],
+                "developerNotes": "Stock chart rendering engine planned for v1.4.",
+                "developerNotesRu": "Движок рендеринга графиков цен запланирован на v1.4."
+              },
+              {
+                "id": "bank-4",
+                "title": "Armored Collector Fleet & Transport Runs",
+                "titleRu": "🚚 Служба Инкассации и Рейсы (Collector Fleet)",
+                "description": "Active cash transport & collection gameplay:\n• Purchase armored vans and send them on routes (collecting cash from ATMs, shopping malls, and businesses).\n• Transport runs take 1–5 minutes with risk of random attacks (reduced by upgrading van armor and hiring armed guards).\n• Vans return with massive cash rewards.",
+                "descriptionRu": "Геймплейная активность по сбору и перевозке наличных:\n\n• Игрок закупает броневики (инкассаторские машины) и отправляет их в рейсы по городу (сбор выручки из банкоматов, ТЦ и других организаций).\n• Рейс длится 1–5 минут. Есть шанс случайного нападения на рейс (шанс снижается покупкой брони для машин и вооруженной охраны).\n• По возвращении машина приносит крупный куш наличных.",
+                "status": "planned",
+                "category": "Gameplay",
+                "categoryRu": "Геймплей",
+                "version": "v1.4.0",
+                "targetDate": "Q4 2026",
+                "progress": 20,
+                "votes": 0,
+                "tags": ["Transport", "Collector", "Cash"],
+                "developerNotes": "City map routes and vehicle upgrade system in design.",
+                "developerNotesRu": "Проектируются маршруты по карте города и прокачка машин."
+              },
+              {
+                "id": "bank-5",
+                "title": "Daily Quests & Bank Pass",
+                "titleRu": "📜 Ежедневные Задания и Bank Pass (Daily Quests)",
+                "description": "Classic player retention quest system:\n• Example Quests: Issue 5 loans in a day, Repel 1 robbery attempt, Run 2 marketing campaigns, Earn $50,000 on investments.\n• Rewards: Premium currency (gems/gold), income boosts, exclusive bank building skins.",
+                "descriptionRu": "Классическая механика удержания игроков:\n\nПримеры заданий:\n• «Выдать 5 кредитов за день»\n• «Успешно отбить 1 попытку ограбления»\n• «Провести 2 маркетинговые кампании»\n• «Заработать $50,000 на инвестициях»\n\nНаграда: Премиум-валюта (кристаллы/голда), бусты дохода, скины для банка.",
+                "status": "planned",
+                "category": "Features",
+                "categoryRu": "Фичи",
+                "version": "v1.4.0",
+                "targetDate": "Q4 2026",
+                "progress": 10,
+                "votes": 0,
+                "tags": ["Quests", "Bank Pass", "Rewards"],
+                "developerNotes": "Daily quest rotation logic ready.",
+                "developerNotesRu": "Логика ротации ежедневных квестов подготовлена."
+              }
+            ]
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initUrlParams();
+            initHeaderAndMobileMenu();
+            fetchServerRoadmapData();
+        });
+
+        function initUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const rawId = urlParams.get('id') || urlParams.get('game') || '';
+            const normalized = rawId.toLowerCase().trim();
+
+            if (normalized.includes('bank')) currentGameId = 'banksim';
+            else if (normalized.includes('dev')) currentGameId = 'devsim';
+            else if (normalized.length > 0) currentGameId = normalized;
+            else currentGameId = 'devsim';
+
+            updateGameSwitcherTabs();
+        }
+
+        async function fetchServerRoadmapData() {
+            try {
+                const response = await fetch(`${VERCEL_BACKEND_URL}/roadmap?game=${currentGameId}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    roadmapData = data.devsim ? data : { [currentGameId]: data };
+                } else {
+                    const fallbackRes = await fetch(LOCAL_DATA_URL);
+                    roadmapData = await fallbackRes.json();
+                }
+            } catch (err) {
+                roadmapData = DEFAULT_ROADMAP_DATA;
+            }
+            renderRoadmap();
+        }
+
+        function switchGame(gameId) {
+            currentGameId = gameId;
+            const url = new URL(window.location);
+            url.searchParams.set('id', gameId);
+            window.history.pushState({}, '', url);
+            updateGameSwitcherTabs();
+            renderRoadmap();
+        }
+
+        function updateGameSwitcherTabs() {
+            document.querySelectorAll('.game-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.game === currentGameId);
+            });
+        }
+
+        const GOOGLE_PLAY_PACKAGES = {
+          'devsim': 'com.DeepSquad.DeveloperSimulator',
+          'banksim': 'com.DeepSquad.BankSimulator'
+        };
+
+        async function checkGooglePlayLiveVersion(gameId) {
+          const pkg = GOOGLE_PLAY_PACKAGES[gameId];
+          if (!pkg) return;
+
+          try {
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://play.google.com/store/apps/details?id=' + pkg + '&hl=en')}`;
+            const response = await fetch(proxyUrl);
+            if (response.ok) {
+              const data = await response.json();
+              const html = data.contents || '';
+              const versionMatch = html.match(/\[\[\["([0-9]+\.[0-9]+\.[0-9]+[^"]*)"\]\]/);
+              if (versionMatch && versionMatch[1]) {
+                const liveVer = 'v' + versionMatch[1];
+                const verBadge = document.getElementById('heroGameVersion');
+                if (verBadge && currentGameId === gameId) {
+                  verBadge.textContent = liveVer;
+                  verBadge.title = 'Версия из Google Play';
+                }
+              }
+            }
+          } catch (err) {
+            // Silently fall back
+          }
+        }
+
+        function renderRoadmap() {
+            const gameData = roadmapData[currentGameId] || DEFAULT_ROADMAP_DATA[currentGameId] || DEFAULT_ROADMAP_DATA['devsim'];
+
+            document.getElementById('heroGameTitle').textContent = gameData.gameTitleRu || gameData.gameTitle;
+            document.getElementById('heroGameTagline').textContent = gameData.taglineRu || gameData.tagline;
+            document.getElementById('heroGameVersion').textContent = gameData.currentVersion || 'v1.0.0';
+            
+            let iconPath = gameData.icon || '../Images/logotype.png';
+            if (!iconPath.startsWith('../') && !iconPath.startsWith('http')) {
+                iconPath = '../' + iconPath;
+            }
+            document.getElementById('heroGameIcon').src = iconPath;
+
+            checkGooglePlayLiveVersion(currentGameId);
+
+            const items = gameData.items || [];
+            let counts = { all: items.length, 'in-progress': 0, planned: 0, completed: 0, idea: 0 };
+            let totalVotes = 0;
+
+            items.forEach(item => {
+                const st = item.status || 'planned';
+                if (counts[st] !== undefined) counts[st]++;
+                const itemVotes = (item.votes || 0) + (localVotes[item.id] ? 1 : 0);
+                totalVotes += itemVotes;
+            });
+
+            document.getElementById('countAll').textContent = counts.all;
+            document.getElementById('countInProgress').textContent = counts['in-progress'];
+            document.getElementById('countPlanned').textContent = counts.planned;
+            document.getElementById('countCompleted').textContent = counts.completed;
+            document.getElementById('countIdea').textContent = counts.idea;
+
+            document.getElementById('statReleased').textContent = gameData.stats?.releasedCount || counts.completed;
+            document.getElementById('statInProgress').textContent = gameData.stats?.inProgressCount || counts['in-progress'];
+            document.getElementById('statPlanned').textContent = gameData.stats?.plannedCount || counts.planned;
+            document.getElementById('statVotes').textContent = (totalVotes).toLocaleString();
+
+            const filteredItems = items.filter(item => {
+                const matchesStatus = currentStatusFilter === 'all' || item.status === currentStatusFilter;
+                const matchesCategory = currentCategoryFilter === 'all' || item.category === currentCategoryFilter;
+                const title = (item.titleRu || item.title).toLowerCase();
+                const desc = (item.descriptionRu || item.description).toLowerCase();
+                const q = currentSearchQuery.toLowerCase();
+                return matchesStatus && matchesCategory && (!q || title.includes(q) || desc.includes(q));
+            });
+
+            if (currentViewMode === 'grid') {
+                renderGridCards(filteredItems);
+            } else {
+                renderTimelineView(gameData.milestones || [], filteredItems);
+            }
+        }
+
+        function renderGridCards(items) {
+            const grid = document.getElementById('gridContainer');
+            grid.style.display = 'grid';
+            document.getElementById('timelineContainer').style.display = 'none';
+
+            if (items.length === 0) {
+                const isNoFilter = !currentSearchQuery && currentStatusFilter === 'all' && currentCategoryFilter === 'all';
+                const emptyTitle = isNoFilter ? 'Скоро тут появится информация' : 'Ничего не найдено';
+                const emptySub = isNoFilter 
+                    ? 'Мы уже готовим список будущих обновлений для этой игры!'
+                    : 'Попробуйте изменить параметры поиска или фильтров';
+
+                grid.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1; padding: 70px 20px;">
+                        <div class="no-results-icon" style="font-size: 56px; margin-bottom: 16px;">⏳</div>
+                        <div class="no-results-title" style="font-size: 24px; color: var(--dark); font-weight: 700;">${emptyTitle}</div>
+                        <p style="color: var(--gray); font-size: 15px; margin-top: 8px;">${emptySub}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => {
+                const hasVoted = !!localVotes[item.id];
+                const voteCount = (item.votes || 0) + (hasVoted ? 1 : 0);
+                const title = item.titleRu || item.title;
+                const desc = item.descriptionRu || item.description;
+                const category = item.categoryRu || item.category;
+                const devNotes = item.developerNotesRu || item.developerNotes;
+
+                let statusLabel = 'Запланировано';
+                if (item.status === 'completed') statusLabel = 'Реализовано';
+                if (item.status === 'in-progress') statusLabel = 'В разработке';
+                if (item.status === 'idea') statusLabel = 'Идея сообщества';
+
+                const tagsHtml = (item.tags || []).map(t => `<span class="tag-chip">#${t}</span>`).join('');
+                const showProgress = item.status === 'in-progress' || item.status === 'completed';
+                
+                return `
+                    <div class="item-card animate__animated animate__fadeInUp" data-status="${item.status}">
+                        <div>
+                            <div class="item-card-header">
+                                <span class="status-badge ${item.status}">
+                                    <span class="status-dot"></span>
+                                    ${statusLabel}
+                                </span>
+                                <span class="item-category">${category}</span>
+                            </div>
+                            <h3 class="item-title">${title}</h3>
+                            <p class="item-desc">${desc}</p>
+                            ${showProgress ? `
+                                <div class="progress-wrapper">
+                                    <div class="progress-header"><span>Прогресс</span><span>${item.progress}%</span></div>
+                                    <div class="progress-bar-bg"><div class="progress-bar-fill ${item.status === 'completed' ? 'completed' : ''}" style="width: ${item.progress}%"></div></div>
+                                </div>
+                            ` : ''}
+                            <div class="item-tags">${tagsHtml}</div>
+                            ${devNotes ? `<div class="dev-note-box"><div class="dev-note-title">💬 Заметка разработчика</div><div>${devNotes}</div></div>` : ''}
+                        </div>
+                        <div class="item-card-footer">
+                            <div class="item-meta-info">
+                                <span class="meta-ver">${item.version || 'TBD'}</span>
+                                <span class="meta-date">${item.targetDate || ''}</span>
+                            </div>
+                            <button class="upvote-btn ${hasVoted ? 'voted' : ''}" onclick="toggleUpvote('${item.id}')">
+                                <span class="upvote-icon">${hasVoted ? '❤️' : '▲'}</span>
+                                <span>${hasVoted ? 'Голос' : 'Голосовать'}</span>
+                                <span>(${voteCount})</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderTimelineView(milestones, items) {
+            const grid = document.getElementById('gridContainer');
+            const timeline = document.getElementById('timelineContainer');
+            grid.style.display = 'none';
+            timeline.style.display = 'block';
+
+            if (milestones.length === 0) {
+                timeline.innerHTML = `
+                    <div class="no-results" style="padding: 70px 20px;">
+                        <div class="no-results-icon" style="font-size: 56px; margin-bottom: 16px;">⏳</div>
+                        <div class="no-results-title" style="font-size: 24px; color: var(--dark); font-weight: 700;">Скоро тут появится информация</div>
+                        <p style="color: var(--gray); font-size: 15px; margin-top: 8px;">Мы уже готовим график предстоящих релизов!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            timeline.innerHTML = milestones.map(m => {
+                const title = m.titleRu || m.title;
+                const summary = m.summaryRu || m.summary;
+                const milestoneItems = items.filter(i => i.version === m.version);
+                const itemsHtml = milestoneItems.map(item => `
+                    <div style="background: var(--gray-subtle); padding: 12px 16px; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong style="color: var(--dark);">${item.titleRu || item.title}</strong>
+                            <div style="font-size: 12px; color: var(--gray);">${item.categoryRu || item.category}</div>
+                        </div>
+                        <span class="status-badge ${item.status}">${item.progress}%</span>
+                    </div>
+                `).join('');
+
+                return `
+                    <div class="timeline-milestone animate__animated animate__fadeInUp" data-status="${m.status}">
+                        <div class="timeline-node"></div>
+                        <div class="milestone-card">
+                            <div class="milestone-header">
+                                <div class="milestone-version">
+                                    <span>${m.version}</span>
+                                    <span style="font-size: 16px; font-weight: 600; color: var(--primary);">${title}</span>
+                                </div>
+                                <span class="status-badge ${m.status}">${m.targetDate}</span>
+                            </div>
+                            <p class="milestone-summary">${summary}</p>
+                            <div class="milestone-items-list">${itemsHtml || '<div style="font-size: 13px; color: var(--gray);">Запланированные функции...</div>'}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleUpvote(itemId) {
+            if (localVotes[itemId]) {
+                delete localVotes[itemId];
+                showToast('Ваш голос отозван', 'ℹ️');
+                localStorage.setItem('roadmap_votes', JSON.stringify(localVotes));
+                renderRoadmap();
+            } else {
+                pendingUpvoteItemId = itemId;
+                openRecaptchaModal();
+            }
+        }
+
+        function openRecaptchaModal() {
+            document.getElementById('recaptchaModal').classList.add('active');
+            if (window.grecaptcha) grecaptcha.reset();
+        }
+
+        function closeRecaptchaModal() {
+            document.getElementById('recaptchaModal').classList.remove('active');
+        }
+
+        async function onRecaptchaUpvoteSuccess(token) {
+            if (!pendingUpvoteItemId || !token) return;
+
+            showToast('Проверка капчи...', '⏳');
+
+            try {
+                const response = await fetch(`${VERCEL_BACKEND_URL}/upvote`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        gameId: currentGameId,
+                        itemId: pendingUpvoteItemId,
+                        recaptchaToken: token
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    localVotes[pendingUpvoteItemId] = true;
+                    localStorage.setItem('roadmap_votes', JSON.stringify(localVotes));
+
+                    const targetData = roadmapData[currentGameId] || DEFAULT_ROADMAP_DATA[currentGameId];
+                    if (targetData && targetData.items) {
+                        const item = targetData.items.find(i => i.id === pendingUpvoteItemId);
+                        if (item) item.votes = (item.votes || 0) + 1;
+                    }
+
+                    showToast('Голос подтвержден и учтен! ❤️', '🔥');
+                } else {
+                    showToast(result.error || 'Ошибка капчи', '⚠️');
+                }
+            } catch (err) {
+                localVotes[pendingUpvoteItemId] = true;
+                localStorage.setItem('roadmap_votes', JSON.stringify(localVotes));
+                showToast('Голос учтен! ❤️', '🔥');
+            }
+
+            closeRecaptchaModal();
+            renderRoadmap();
+        }
+
+        function setFilterStatus(status) {
+            currentStatusFilter = status;
+            document.querySelectorAll('.status-filters .filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.status === status);
+            });
+            renderRoadmap();
+        }
+
+        function setCategoryFilter(category) {
+            currentCategoryFilter = category;
+            document.querySelectorAll('.cat-pill').forEach(pill => {
+                pill.classList.toggle('active', pill.dataset.cat === category);
+            });
+            renderRoadmap();
+        }
+
+        function onSearchChange(val) { currentSearchQuery = val; renderRoadmap(); }
+
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            document.getElementById('viewBtnGrid').classList.toggle('active', mode === 'grid');
+            document.getElementById('viewBtnTimeline').classList.toggle('active', mode === 'timeline');
+            renderRoadmap();
+        }
+
+        function openSuggestModal() { document.getElementById('suggestModal').classList.add('active'); }
+        function closeSuggestModal() { document.getElementById('suggestModal').classList.remove('active'); }
+
+        async function handleSuggestSubmit(event) {
+            event.preventDefault();
+            const title = document.getElementById('suggestTitle').value;
+            const category = document.getElementById('suggestCategory').value;
+            const desc = document.getElementById('suggestDesc').value;
+            const author = document.getElementById('suggestAuthor').value;
+
+            const newItem = {
+                id: 'user-' + Date.now(),
+                title: title,
+                titleRu: title,
+                description: desc + (author ? ` (Предложено: ${author})` : ''),
+                descriptionRu: desc + (author ? ` (Предложено: ${author})` : ''),
+                status: 'idea',
+                category: category,
+                categoryRu: category,
+                version: 'На рассмотрении',
+                targetDate: 'TBD',
+                progress: 0,
+                votes: 1,
+                tags: ['Идея сообщества', author ? author : 'Игрок']
+            };
+
+            const targetData = roadmapData[currentGameId] || DEFAULT_ROADMAP_DATA[currentGameId];
+            if (targetData && targetData.items) {
+                targetData.items.unshift(newItem);
+                localVotes[newItem.id] = true;
+                localStorage.setItem('roadmap_votes', JSON.stringify(localVotes));
+            }
+
+            closeSuggestModal();
+            document.getElementById('suggestForm').reset();
+            showToast('Идея отправлена разработчикам!', '🎉');
+            renderRoadmap();
+        }
+
+        function showToast(msg, icon = '✨') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            document.getElementById('toastIcon').textContent = icon;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3200);
+        }
+
+        function initHeaderAndMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('nav');
+            const header = document.getElementById('header');
+
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Vercel Backend (hosted separately at https://deepdevappsinf.vercel.app/)
+backend/
+node_modules/
+.DS_Store
