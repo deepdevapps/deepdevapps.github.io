@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>if (window.location.pathname.endsWith('/index.html')) window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);</script>
     <meta charset="UTF-8">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX3R5VXH2S"></script>
@@ -22,10 +23,10 @@
     <meta property="og:image" content="https://deepdevapps.github.io/Images/logotype.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#6C5CE7">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="Images/logotype.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/Images/logotype.png">
     <link rel="canonical" href="https://deepdevapps.github.io/">
-    <link rel="shortcut icon" href="Images/logotype.png" />
+    <link rel="shortcut icon" href="/Images/logotype.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +35,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="animations.js" defer></script>
-	<script src="cookie-banner.js" defer></script>
+    <script src="/animations.js" defer></script>
+	<script src="/cookie-banner.js" defer></script>
     
     <style>
         :root {
@@ -630,12 +631,12 @@
                 <nav class="nav" id="nav">
                     <a class="nav__link" href="#about">About</a>
                     <a class="nav__link" href="#games">Games</a>
-                    <a class="nav__link" href="roadmap.html">Roadmap</a>
+                    <a class="nav__link" href="/roadmap/">Roadmap</a>
                     <a class="nav__link" href="#contacts">Contact</a>
-                    <a class="nav__link" href="privacy">Privacy</a>
+                    <a class="nav__link" href="/privacy/">Privacy</a>
 					<div class="language-switcher">
-                        <a href="./" class="lang-btn active">EN</a>
-                        <a href="ru/" class="lang-btn">RU</a>
+                        <a href="/" class="lang-btn active">EN</a>
+                        <a href="/ru/" class="lang-btn">RU</a>
                     </div>
                 </nav>
             </div>
@@ -671,31 +672,16 @@
             <div class="section__header animate__animated animate__fadeIn">
                 <h2 class="section__title">Our Projects</h2>
             </div>
-            
-            <div class="game-card animate__animated animate__fadeInUp">
-                <img class="game__image" src="Images/game1photo.png" alt="Developer Simulator">
-                <div class="game__info">
-                    <h3 class="game__title">Developer Simulator</h3>
-                    <p class="game__description">
-                        A realistic game and application development simulator. Create companies, hire employees, 
-                        improve skills, open new offices and much more in this immersive business simulation!
-                    </p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <a class="btn2" href="devSim">Download Now</a>
-                        <a class="btn2" href="roadmap.html?id=devsim" style="background-color: transparent; color: var(--primary); border: 2px solid var(--primary);">🚀 View Roadmap</a>
-                    </div>
-                </div>
-            </div>
 			<div class="game-card animate__animated animate__fadeInUp">
-                <img class="game__image" src="Images/bank.png" alt="Bank Simulator">
+                <img class="game__image" src="/Images/bank.png" alt="Bank Simulator">
                 <div class="game__info">
                     <h3 class="game__title">Bank Simulator</h3>
                     <p class="game__description">
 						Build your bank from the ground up: hire staff, open new offices, upgrade HQ, and manage loans, deposits, and technologies.
                     </p>
                     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <a class="btn2" href="banksim">Download Now</a>
-                        <a class="btn2" href="roadmap.html?id=banksim" style="background-color: transparent; color: var(--primary); border: 2px solid var(--primary);">🚀 View Roadmap</a>
+                        <a class="btn2" href="/banksim/">Download Now</a>
+                        <a class="btn2" href="/roadmap/?id=banksim" style="background-color: transparent; color: var(--primary); border: 2px solid var(--primary);">🚀 View Roadmap</a>
                     </div>
                 </div>
             </div>
@@ -709,18 +695,22 @@
             </div>
             
 			<div class="socials">
+                <div class="social-card">
+                    <svg class="social__icon" viewBox="0 0 24 24" role="img" aria-label="X"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.5L.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L6.4 3.9H4.6L17.8 20Z"/></svg>
+                    <a class="social__btn" href="https://x.com/deepsquadapps" target="_blank" rel="noopener noreferrer">X</a>
+                </div>
 				<div class="social-card">
-					<img class="social__icon" src="Images/telegram.png" alt="Telegram">
+					<img class="social__icon" src="/Images/telegram.png" alt="Telegram">
 					<a class="social__btn" href="https://t.me/deepdevapps">Telegram</a>
 				</div>
 				
 				<div class="social-card">
-					<img class="social__icon" src="Images/youtube.png" alt="YouTube">
+					<img class="social__icon" src="/Images/youtube.png" alt="YouTube">
 					<a class="social__btn" href="https://www.youtube.com/@DeepDevApps">YouTube</a>
 				</div>
 				
 				<div class="social-card">
-					<img class="social__icon" src="Images/envelope.png" alt="Email">
+					<img class="social__icon" src="/Images/envelope.png" alt="Email">
 					<a class="social__btn" href="mailto:pavlik0804channel@gmail.com">Email Us</a>
 				</div>
 			</div>

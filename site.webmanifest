@@ -2,7 +2,7 @@
   "name": "DeepSquad - Indie Game Studio",
   "short_name": "DeepSquad",
   "description": "DeepSquad - Indie game studio creating immersive 2D simulators for mobile devices.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#F5F6FA",
   "theme_color": "#6C5CE7",

@@ -1,11 +1,4 @@
 // --- DeepSquad GSAP Animation Suite (Fixed & Reliable) ---
-try {
-    if (window.location.pathname.endsWith('.html') && !window.location.pathname.endsWith('index.html')) {
-        const cleanPath = window.location.pathname.replace(/\.html$/, '');
-        window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
-    }
-} catch (e) {}
-
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap === 'undefined') return;
 

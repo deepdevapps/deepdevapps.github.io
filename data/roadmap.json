@@ -1,23 +1,4 @@
 {
-  "devsim": {
-    "gameId": "devsim",
-    "gameTitle": "Developer Simulator",
-    "gameTitleRu": "Симулятор разработчика",
-    "tagline": "Build your ultimate tech empire from scratch",
-    "taglineRu": "Создайте свою технологическую империю с нуля",
-    "icon": "Images/game1photo.png",
-    "currentVersion": "v1.0.0",
-    "emptyMessage": "Скоро тут появится информация",
-    "emptyMessageEn": "Information coming soon",
-    "stats": {
-      "releasedCount": 0,
-      "inProgressCount": 0,
-      "plannedCount": 0,
-      "totalVotes": 0
-    },
-    "milestones": [],
-    "items": []
-  },
   "banksim": {
     "gameId": "banksim",
     "gameTitle": "Bank Simulator",
@@ -68,7 +49,11 @@
         "targetDate": "Q3 2026",
         "progress": 75,
         "votes": 0,
-        "tags": ["Events", "Crisis", "Gameplay"],
+        "tags": [
+          "Events",
+          "Crisis",
+          "Gameplay"
+        ],
         "developerNotes": "Pop-up card dialog UI & event chance logic in active development.",
         "developerNotesRu": "Интерфейс всплывающих карточек и логика шансов в активной разработке."
       },
@@ -85,7 +70,11 @@
         "targetDate": "Q3 2026",
         "progress": 60,
         "votes": 0,
-        "tags": ["VIP", "Negotiations", "Contracts"],
+        "tags": [
+          "VIP",
+          "Negotiations",
+          "Contracts"
+        ],
         "developerNotes": "Dialogue tree system and VIP avatars being created.",
         "developerNotesRu": "Создается система диалогов и аватары редких VIP-персонажей."
       },
@@ -102,7 +91,11 @@
         "targetDate": "Q4 2026",
         "progress": 35,
         "votes": 0,
-        "tags": ["Trading", "Crypto", "Stock Market"],
+        "tags": [
+          "Trading",
+          "Crypto",
+          "Stock Market"
+        ],
         "developerNotes": "Stock chart rendering engine planned for v1.4.",
         "developerNotesRu": "Движок рендеринга графиков цен запланирован на v1.4."
       },
@@ -119,7 +112,11 @@
         "targetDate": "Q4 2026",
         "progress": 20,
         "votes": 0,
-        "tags": ["Transport", "Collector", "Cash"],
+        "tags": [
+          "Transport",
+          "Collector",
+          "Cash"
+        ],
         "developerNotes": "City map routes and vehicle upgrade system in design.",
         "developerNotesRu": "Проектируются маршруты по карте города и прокачка машин."
       },
@@ -136,7 +133,11 @@
         "targetDate": "Q4 2026",
         "progress": 10,
         "votes": 0,
-        "tags": ["Quests", "Bank Pass", "Rewards"],
+        "tags": [
+          "Quests",
+          "Bank Pass",
+          "Rewards"
+        ],
         "developerNotes": "Daily quest rotation logic ready.",
         "developerNotesRu": "Логика ротации ежедневных квестов подготовлена."
       }

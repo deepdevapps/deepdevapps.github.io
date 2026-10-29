@@ -13,3 +13,17 @@ Disallow: /pavlik0804channel@gmail.com.html
 
 # Sitemap Location
 Sitemap: https://deepdevapps.github.io/sitemap.xml
+
+# Clean service and retired game routes
+Disallow: /403/
+Disallow: /404/
+Disallow: /SirDictator/
+Disallow: /SirDictatorLore/
+Disallow: /devSim/
+Disallow: /devsimprivacy/
+Disallow: /pavlik0804channel@gmail.com/
+Disallow: /ru/403/
+Disallow: /ru/404/
+Disallow: /ru/devSim/
+Disallow: /ru/devsimprivacy/
+Disallow: /test-n1/

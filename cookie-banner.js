@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Define the HTML content for the banner
     const bannerHTML = `
-        <p>We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you agree to our use of cookies for analytics. <a href="/privacy.html">Learn more</a>.</p>
+        <p>We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you agree to our use of cookies for analytics. <a href="/privacy/">Learn more</a>.</p>
         <div class="cookie-buttons">
             <button id="decline-cookies" class="btn-cookie btn-cookie-decline">Decline</button>
             <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Accept</button>

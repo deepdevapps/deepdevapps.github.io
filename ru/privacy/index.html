@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX3R5VXH2S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RX3R5VXH2S');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности | DeepSquad</title>
+    <meta name="description" content="Политика конфиденциальности веб-сайта и мобильных игр DeepSquad. Информация о файлах cookie, Google Analytics и защите данных.">
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepdevapps.github.io/ru/privacy/">
+    <meta property="og:title" content="Политика конфиденциальности | DeepSquad">
+    <meta property="og:description" content="Узнайте о наших правилах обработки данных, использовании файлов cookie, интеграции Google Analytics и политиках приложений.">
+    <meta property="og:image" content="https://deepdevapps.github.io/Images/logotype.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#6C5CE7">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/Images/logotype.png">
+    <link rel="canonical" href="https://deepdevapps.github.io/ru/privacy/">
+    <link rel="shortcut icon" href="/Images/logotype.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- GSAP & Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/animations.js" defer></script>
+    <script src="/ru/cookie-banner.js" defer></script>
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5649C0;
+            --secondary: #00CEFF;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --gray: #636E72;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header__logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header__logo:hover {
+            color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav__link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: var(--primary);
+        }
+        
+        .nav__link:hover:after {
+            width: 100%;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+        
+        .lang-btn {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: transparent;
+            color: var(--dark);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .privacy-hero {
+            height: 35vh;
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-top: 80px;
+            margin-bottom: 50px;
+        }
+        
+        .privacy-hero__title {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Privacy Content */
+        .privacy-section {
+            padding: 20px 0 60px;
+        }
+        
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .privacy-title {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .privacy-item {
+            margin-bottom: 30px;
+        }
+        
+        .privacy-item__title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        
+        .privacy-item__text {
+            color: var(--gray);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .privacy-item__text a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .privacy-item__text a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-list {
+            margin-left: 24px;
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .privacy-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .privacy-list li a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .privacy-list li a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #F0EDFF;
+            color: var(--primary-dark);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer__text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before,
+        .hamburger:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger:before {
+            top: -8px;
+        }
+        
+        .hamburger:after {
+            top: 8px;
+        }
+        
+        .menu-toggle.active .hamburger {
+            background-color: transparent;
+        }
+        
+        .menu-toggle.active .hamburger:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        
+        .menu-toggle.active .hamburger:after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .privacy-hero__title {
+                font-size: 32px;
+            }
+            
+            .privacy-container {
+                padding: 30px 20px;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .privacy-hero {
+                height: 30vh;
+                min-height: 220px;
+            }
+            
+            .privacy-hero__title {
+                font-size: 26px;
+            }
+            
+            .privacy-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/ru/" class="header__logo">DeepSquad</a>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <div class="hamburger"></div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="/ru/">Главная</a>
+                    <a class="nav__link" href="/ru/#games">Игры</a>
+                    <a class="nav__link" href="/ru/#contacts">Контакты</a>
+                    <a class="nav__link" href="/ru/privacy/">Конфиденциальность</a>
+                    <div class="language-switcher">
+                        <a href="/privacy/" class="lang-btn">EN</a>
+                        <a href="/ru/privacy/" class="lang-btn active">RU</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="privacy-hero animate__animated animate__fadeIn">
+        <div class="container">
+            <h1 class="privacy-hero__title animate__animated animate__fadeInUp">Политика конфиденциальности</h1>
+            <p style="opacity: 0.9; font-size: 16px;">Дата вступления в силу: Февраль 2026 г.</p>
+        </div>
+    </section>
+    
+    <!-- Privacy Content -->
+    <div class="privacy-section">
+        <div class="privacy-container animate__animated animate__fadeIn">
+            <h2 class="privacy-title">Политика конфиденциальности сайта и сервисов</h2>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">1. Общие положения</h3>
+                <p class="privacy-item__text">
+                    Настоящая Политика конфиденциальности распространяется на официальный веб-сайт студии DeepSquad (<a href="https://deepdevapps.github.io">deepdevapps.github.io</a>) и наши мобильные приложения. DeepSquad («мы», «наш») — инди-студия разработки игр, базирующаяся в России. Мы уважительно относимся к конфиденциальности пользователей и стремимся защищать информацию, собираемую при взаимодействии с сайтом и сервисами.
+                </p>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">2. Аналитика и файлы Cookie</h3>
+                <p class="privacy-item__text">
+                    Мы используем файлы cookie и технологии локального хранения (такие как <code>localStorage</code>) для улучшения работы сайта и анализа веб-трафика.
+                </p>
+                <ul class="privacy-list">
+                    <li><strong>Google Analytics:</strong> Мы используем сервис Google Analytics (идентификатор измерений: <code>G-RX3R5VXH2S</code>) для сбора агрегированной анонимной статистики (просмотры страниц, демография посетителей, типы браузеров и операционных систем, источники переходов). Это помогает нам оптимизировать работу веб-сайта.</li>
+                    <li><strong>Баннер согласия Cookie:</strong> Скрипт аналитики Google Analytics инициализируется и загружается <em>только после того, как вы даете явное согласие</em>, нажав кнопку «Принять» на баннере Cookie. Ваш выбор сохраняется в <code>localStorage</code> браузера под ключом <code>cookie_consent</code>.</li>
+                    <li><strong>Управление согласием:</strong> Вы можете в любой момент отозвать согласие или отклонить сбор данных, очистив файлы cookie/данные сайта в настройках браузера либо нажав «Отклонить» на баннере.</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">3. Сбор персональных данных</h3>
+                <p class="privacy-item__text">
+                    Наш веб-сайт не требует регистрации аккаунта. Мы не собираем, не храним и не передаем чувствительные персональные данные (такие как ФИО, домашние адреса или банковские реквизиты). Если вы обратитесь к нам по электронной почте или через социальные сети, предоставленные данные будут использованы исключительно для ответа на ваш запрос.
+                </p>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">4. Сторонние сервисы и внешние ссылки</h3>
+                <p class="privacy-item__text">
+                    Наш сайт содержит ссылки на внешние платформы и сторонние сервисы, которые действуют независимо и имеют собственные правила обработки данных:
+                </p>
+                <ul class="privacy-list">
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Политика конфиденциальности и условия Google</a></li>
+                    <li><a href="https://play.google.com/store" target="_blank" rel="noopener">Сервисы Google Play Store</a></li>
+                    <li><a href="https://t.me/deepdevapps" target="_blank" rel="noopener">Telegram-канал (@deepdevapps)</a></li>
+                    <li><a href="https://www.youtube.com/@DeepDevApps" target="_blank" rel="noopener">YouTube-канал (@DeepDevApps)</a></li>
+                </ul>
+            </div>
+
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">5. Политики конфиденциальности мобильных приложений</h3>
+                <p class="privacy-item__text">
+                    Для каждой из наших мобильных игр действуют отдельные политики конфиденциальности, описывающие внутриигровую аналитику, рекламные идентификаторы и правила хранения данных:
+                </p>
+                <ul class="privacy-list">
+                    <li><a href="/ru/banksimprivacy/">Политика конфиденциальности Bank Simulator</a></li>
+                    <li><a href="/ru/durakprivacy/">Политика конфиденциальности Durak Mobile</a></li>
+                </ul>
+            </div>
+            
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">6. Подлинность веб-сайта</h3>
+                <p class="privacy-item__text">
+                    Домен <strong>deepdevapps.github.io</strong> является единственным официальным веб-сайтом студии DeepSquad. Мы не несем ответственности за неофициальные клоны, зеркала или сторонние подделки нашего сайта на неавторизованных доменах.
+                </p>
+            </div>
+
+            <div class="privacy-item animate__animated animate__fadeIn">
+                <h3 class="privacy-item__title">7. Контактная информация</h3>
+                <p class="privacy-item__text">
+                    Если у вас есть вопросы относительно настоящей Политики конфиденциальности или обработки данных, свяжитесь с нами:
+                </p>
+                <ul class="privacy-list">
+                    <li>Электронная почта: <a href="mailto:pavlik0804channel@gmail.com">pavlik0804channel@gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/deepdevapps" target="_blank" rel="noopener">t.me/deepdevapps</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer__text">© 2026 DeepSquad - Все права защищены</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
