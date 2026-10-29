@@ -618,6 +618,7 @@
         }
     </style>
     <link rel="stylesheet" href="/css/home-hero.css">
+    <script src="/home-gallery.js" defer></script>
 </head>
 <body>
     <header id="header">
@@ -659,12 +660,50 @@
                 </div>
                 <p class="hero__availability">Игра в бета-тестировании · Условия участия — на странице игры</p>
             </div>
-            <figure class="hero__preview">
-                <div class="hero__phone">
-                    <img class="hero__screenshot" src="/Images/bank-screenshot3.png" alt="Bank Simulator: баланс банка, доходы и управление кредитами и вкладами" width="459" height="822" fetchpriority="high">
+            <section class="showcase" data-game-gallery aria-label="Скриншоты Bank Simulator">
+                <p class="showcase__heading">Пять сторон вашего банка</p>
+                <div class="showcase__stage" data-gallery-stage>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/01-bank.png" data-gallery-card data-title="Банк" aria-label="Банк: открыть скриншот">
+                        <img src="/Images/banksim/01-bank.png" alt="Bank Simulator: Баланс банка, резервы и доходы" width="1080" height="1920" fetchpriority="high" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/02-loans.png" data-gallery-card data-title="Кредиты" aria-label="Кредиты: открыть скриншот">
+                        <img src="/Images/banksim/02-loans.png" alt="Bank Simulator: Выдача кредита и оценка риска" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/03-assets.png" data-gallery-card data-title="Активы" aria-label="Активы: открыть скриншот">
+                        <img src="/Images/banksim/03-assets.png" alt="Bank Simulator: Каталог активов и доходность" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/04-headquarters.png" data-gallery-card data-title="Штаб-квартира" aria-label="Штаб-квартира: открыть скриншот">
+                        <img src="/Images/banksim/04-headquarters.png" alt="Bank Simulator: Улучшение штаб-квартиры банка" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/05-marketing.png" data-gallery-card data-title="Маркетинг" aria-label="Маркетинг: открыть скриншот">
+                        <img src="/Images/banksim/05-marketing.png" alt="Bank Simulator: Рекламные кампании и репутация" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
                 </div>
-                <figcaption class="hero__caption">Скриншот из игры · Bank Simulator</figcaption>
-            </figure>
+                <div class="showcase__navigation" data-gallery-controls hidden>
+                    <button class="showcase__arrow" type="button" data-gallery-step="-1" aria-label="Предыдущий скриншот">←</button>
+                    <p class="showcase__status" data-gallery-status aria-live="polite" aria-atomic="true">01 / 05 · Банк</p>
+                    <button class="showcase__arrow" type="button" data-gallery-step="1" aria-label="Следующий скриншот">→</button>
+                </div>
+                <div class="showcase__topics" data-gallery-controls hidden role="group" aria-label="Темы скриншотов">
+                    <button type="button" data-gallery-index="0" aria-pressed="true">Банк</button>
+                    <button type="button" data-gallery-index="1" aria-pressed="false">Кредиты</button>
+                    <button type="button" data-gallery-index="2" aria-pressed="false">Активы</button>
+                    <button type="button" data-gallery-index="3" aria-pressed="false">Штаб-квартира</button>
+                    <button type="button" data-gallery-index="4" aria-pressed="false">Маркетинг</button>
+                </div>
+                <p class="showcase__hint">Выберите тему · Нажмите на кадр, чтобы увеличить</p>
+                <dialog class="showcase__dialog" aria-labelledby="screenshot-dialog-title">
+                    <div class="showcase__dialog-bar">
+                        <p id="screenshot-dialog-title" data-dialog-title></p>
+                        <button type="button" data-dialog-close aria-label="Закрыть">×</button>
+                    </div>
+                    <img alt="" width="1080" height="1920">
+                    <div class="showcase__dialog-navigation">
+                        <button type="button" data-gallery-step="-1" aria-label="Предыдущий скриншот">←</button>
+                        <button type="button" data-gallery-step="1" aria-label="Следующий скриншот">→</button>
+                    </div>
+                </dialog>
+            </section>
         </div>
     </section>
     

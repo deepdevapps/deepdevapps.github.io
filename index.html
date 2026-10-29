@@ -618,6 +618,7 @@
         }
     </style>
     <link rel="stylesheet" href="/css/home-hero.css">
+    <script src="/home-gallery.js" defer></script>
 </head>
 <body>
     <header id="header">
@@ -659,12 +660,50 @@
                 </div>
                 <p class="hero__availability">Currently in beta · See the game page for access details</p>
             </div>
-            <figure class="hero__preview">
-                <div class="hero__phone">
-                    <img class="hero__screenshot" src="/Images/bank-screenshot3.png" alt="Bank Simulator showing bank balance, income, and loan and deposit management" width="459" height="822" fetchpriority="high">
+            <section class="showcase" data-game-gallery aria-label="Bank Simulator screenshots">
+                <p class="showcase__heading">Five sides of your bank</p>
+                <div class="showcase__stage" data-gallery-stage>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/01-bank.png" data-gallery-card data-title="Bank" aria-label="Bank: view screenshot">
+                        <img src="/Images/banksim/01-bank.png" alt="Bank Simulator: Bank balance, reserves and income" width="1080" height="1920" fetchpriority="high" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/02-loans.png" data-gallery-card data-title="Loans" aria-label="Loans: view screenshot">
+                        <img src="/Images/banksim/02-loans.png" alt="Bank Simulator: Loan approval and risk assessment" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/03-assets.png" data-gallery-card data-title="Assets" aria-label="Assets: view screenshot">
+                        <img src="/Images/banksim/03-assets.png" alt="Bank Simulator: Asset catalog and income" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/04-headquarters.png" data-gallery-card data-title="Headquarters" aria-label="Headquarters: view screenshot">
+                        <img src="/Images/banksim/04-headquarters.png" alt="Bank Simulator: Headquarters upgrades" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
+                    <a class="showcase__card" draggable="false" href="/Images/banksim/05-marketing.png" data-gallery-card data-title="Marketing" aria-label="Marketing: view screenshot">
+                        <img src="/Images/banksim/05-marketing.png" alt="Bank Simulator: Marketing campaigns and reputation" width="1080" height="1920" loading="lazy" draggable="false">
+                    </a>
                 </div>
-                <figcaption class="hero__caption">In-game screenshot · Bank Simulator</figcaption>
-            </figure>
+                <div class="showcase__navigation" data-gallery-controls hidden>
+                    <button class="showcase__arrow" type="button" data-gallery-step="-1" aria-label="Previous screenshot">←</button>
+                    <p class="showcase__status" data-gallery-status aria-live="polite" aria-atomic="true">01 / 05 · Bank</p>
+                    <button class="showcase__arrow" type="button" data-gallery-step="1" aria-label="Next screenshot">→</button>
+                </div>
+                <div class="showcase__topics" data-gallery-controls hidden role="group" aria-label="Screenshot topics">
+                    <button type="button" data-gallery-index="0" aria-pressed="true">Bank</button>
+                    <button type="button" data-gallery-index="1" aria-pressed="false">Loans</button>
+                    <button type="button" data-gallery-index="2" aria-pressed="false">Assets</button>
+                    <button type="button" data-gallery-index="3" aria-pressed="false">Headquarters</button>
+                    <button type="button" data-gallery-index="4" aria-pressed="false">Marketing</button>
+                </div>
+                <p class="showcase__hint">Pick a topic · Click the screenshot to expand</p>
+                <dialog class="showcase__dialog" aria-labelledby="screenshot-dialog-title">
+                    <div class="showcase__dialog-bar">
+                        <p id="screenshot-dialog-title" data-dialog-title></p>
+                        <button type="button" data-dialog-close aria-label="Close">×</button>
+                    </div>
+                    <img alt="" width="1080" height="1920">
+                    <div class="showcase__dialog-navigation">
+                        <button type="button" data-gallery-step="-1" aria-label="Previous screenshot">←</button>
+                        <button type="button" data-gallery-step="1" aria-label="Next screenshot">→</button>
+                    </div>
+                </dialog>
+            </section>
         </div>
     </section>
     
