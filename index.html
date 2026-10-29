@@ -617,6 +617,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/css/home-hero.css">
 </head>
 <body>
     <header id="header">
@@ -643,13 +644,27 @@
         </div>
     </header>
     
-    <section class="hero">
-        <div class="container">
-            <div class="hero__content animate__animated animate__fadeIn">
-                <h1 class="hero__title animate__animated animate__fadeInUp">DeepSquad</h1>
-                <p class="hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Creating immersive 2D experiences for mobile and beyond</p>
-                <a href="#about" class="btn btn-primary animate__animated animate__fadeInUp animate-delay-2">Explore More</a>
+    <section class="hero hero--featured" aria-labelledby="featured-game-title">
+        <div class="container hero__layout">
+            <div class="hero__content">
+                <p class="hero__eyebrow"><img class="hero__game-icon" src="/Images/bank.png" alt="" width="44" height="44">DeepSquad · Mobile strategy</p>
+                <h1 class="hero__title" id="featured-game-title">Bank<br>Simulator</h1>
+                <p class="hero__subtitle">Build your bank from the ground up. Hire your team, open new branches, and manage loans and deposits.</p>
+                <ul class="hero__features">
+                    <li>Build your team</li><li>Expand your branches</li><li>Shape your strategy</li>
+                </ul>
+                <div class="hero__actions">
+                    <a href="/banksim/#beta" class="btn hero__download">Download the game <span aria-hidden="true">→</span></a>
+                    <a href="/roadmap/?id=banksim" class="btn hero__roadmap">View roadmap</a>
+                </div>
+                <p class="hero__availability">Currently in beta · See the game page for access details</p>
             </div>
+            <figure class="hero__preview">
+                <div class="hero__phone">
+                    <img class="hero__screenshot" src="/Images/bank-screenshot3.png" alt="Bank Simulator showing bank balance, income, and loan and deposit management" width="459" height="822" fetchpriority="high">
+                </div>
+                <figcaption class="hero__caption">In-game screenshot · Bank Simulator</figcaption>
+            </figure>
         </div>
     </section>
     

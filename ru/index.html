@@ -617,6 +617,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/css/home-hero.css">
 </head>
 <body>
     <header id="header">
@@ -643,13 +644,27 @@
         </div>
     </header>
     
-    <section class="hero">
-        <div class="container">
-            <div class="hero__content animate__animated animate__fadeIn">
-                <h1 class="hero__title animate__animated animate__fadeInUp">DeepSquad</h1>
-                <p class="hero__subtitle animate__animated animate__fadeInUp animate-delay-1">Создаём захватывающие 2D-игры для мобильных устройств и не только</p>
-                <a href="#about" class="btn btn-primary animate__animated animate__fadeInUp animate-delay-2">Узнать больше</a>
+    <section class="hero hero--featured" aria-labelledby="featured-game-title">
+        <div class="container hero__layout">
+            <div class="hero__content">
+                <p class="hero__eyebrow"><img class="hero__game-icon" src="/Images/bank.png" alt="" width="44" height="44">DeepSquad · Мобильная стратегия</p>
+                <h1 class="hero__title" id="featured-game-title">Bank<br>Simulator</h1>
+                <p class="hero__subtitle">Постройте свой банк с нуля. Нанимайте сотрудников, открывайте филиалы и управляйте кредитами и вкладами.</p>
+                <ul class="hero__features">
+                    <li>Своя команда</li><li>Новые филиалы</li><li>Финансовая стратегия</li>
+                </ul>
+                <div class="hero__actions">
+                    <a href="/ru/banksim/#beta" class="btn hero__download">Скачать игру <span aria-hidden="true">→</span></a>
+                    <a href="/ru/roadmap/?id=banksim" class="btn hero__roadmap">Дорожная карта</a>
+                </div>
+                <p class="hero__availability">Игра в бета-тестировании · Условия участия — на странице игры</p>
             </div>
+            <figure class="hero__preview">
+                <div class="hero__phone">
+                    <img class="hero__screenshot" src="/Images/bank-screenshot3.png" alt="Bank Simulator: баланс банка, доходы и управление кредитами и вкладами" width="459" height="822" fetchpriority="high">
+                </div>
+                <figcaption class="hero__caption">Скриншот из игры · Bank Simulator</figcaption>
+            </figure>
         </div>
     </section>
     
